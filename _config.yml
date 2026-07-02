@@ -4,7 +4,7 @@ description: "Researcher in Machine Learning and NLP"
 
 url: "https://lealimarco.github.io"
 
-theme: minimal-mistakes-jekyll
+markdown: kramdown
 
 author:
   name: "Marco Leali"
