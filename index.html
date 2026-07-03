@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Marco Leali - AI & Robotics Researcher. Personal academic portfolio showcasing research in artificial intelligence, robotics, human-robot interaction, and cognitive systems.">
-    <meta name="keywords" content="Marco Leali, AI, Robotics, Research, Human-Robot Interaction, Machine Learning, PhD, Cognitive Systems">
+    <meta name="description" content="Marco Leali — AI Engineer specializing in Machine Learning, NLP, Conversational AI, and LLMs. Based in Gothenburg, Sweden.">
+    <meta name="keywords" content="Marco Leali, AI Engineer, NLP, LLMs, Conversational AI, Machine Learning, Language Technology, Gothenburg, Volvo, HRI">
     <meta name="author" content="Marco Leali">
-    <meta property="og:title" content="Marco Leali | AI & Robotics Researcher">
-    <meta property="og:description" content="Personal academic portfolio showcasing research in AI, robotics, and cognitive systems.">
+    <meta property="og:title" content="Marco Leali | AI Engineer — NLP & Conversational AI">
+    <meta property="og:description" content="AI Engineer with 6+ years in data analysis and AI. Specialized in NLP pipelines, fine-tuning LLMs, and multimodal human-AI interaction.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lealimarco.github.io">
     <meta property="og:image" content="https://lealimarco.github.io/pic.png">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Marco Leali | AI & Robotics Researcher</title>
+    <title>Marco Leali | AI Engineer — NLP, LLMs & Conversational AI</title>
     <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🧠</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,8 +29,6 @@
             --accent: #6c5ce7;
             --accent-light: #a29bfe;
             --accent-glow: rgba(108, 92, 231, 0.3);
-            --gold: #f0c060;
-            --gold-light: #f8d88a;
             --teal: #00cec9;
             --teal-glow: rgba(0, 206, 201, 0.25);
             --rose: #e84393;
@@ -40,7 +38,6 @@
             --radius-sm: 8px;
             --radius: 14px;
             --radius-lg: 20px;
-            --radius-xl: 28px;
             --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
             --shadow-glow: 0 0 60px var(--accent-glow);
             --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -52,7 +49,6 @@
             --nav-height: 64px;
             --max-width: 1200px;
         }
-
         * {
             margin: 0;
             padding: 0;
@@ -71,16 +67,12 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
-        /* ── Animated background ─────────────── */
         .bg-grid {
             position: fixed;
             inset: 0;
             pointer-events: none;
             z-index: 0;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
             background-size: 60px 60px;
             mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, black 30%, transparent 70%);
             -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, black 30%, transparent 70%);
@@ -137,8 +129,6 @@
                 transform: translate(-35px, -15px) scale(1.05);
             }
         }
-
-        /* ── Navigation ──────────────────────── */
         .nav {
             position: fixed;
             top: 0;
@@ -193,7 +183,6 @@
             font-size: 0.9rem;
             font-weight: 500;
             transition: var(--transition-fast);
-            position: relative;
             letter-spacing: 0.01em;
         }
         .nav-links a:hover,
@@ -245,14 +234,10 @@
         .nav-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
         }
-
-        /* ── Main content wrapper ────────────── */
         .main-content {
             position: relative;
             z-index: 1;
         }
-
-        /* ── Sections ────────────────────────── */
         .section {
             padding: 100px 24px;
             max-width: var(--max-width);
@@ -288,8 +273,6 @@
             max-width: 600px;
             margin-bottom: 48px;
         }
-
-        /* ── Hero ────────────────────────────── */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -443,8 +426,6 @@
                 transform: translateY(-8px);
             }
         }
-
-        /* ── Research Interests ─────────────── */
         .interests-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -496,8 +477,6 @@
             color: var(--text-muted);
             line-height: 1.6;
         }
-
-        /* ── Projects ────────────────────────── */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -562,6 +541,7 @@
         .project-links {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
         .project-links a {
             font-size: 0.85rem;
@@ -590,8 +570,6 @@
             background: rgba(255, 255, 255, 0.1);
             color: var(--text-primary);
         }
-
-        /* ── Publications ────────────────────── */
         .pub-list {
             display: flex;
             flex-direction: column;
@@ -644,6 +622,7 @@
             margin-top: 6px;
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
         .pub-links a {
             font-size: 0.78rem;
@@ -656,8 +635,6 @@
             color: var(--teal);
             text-decoration: underline;
         }
-
-        /* ── Experience Timeline ────────────── */
         .timeline {
             position: relative;
             padding-left: 32px;
@@ -694,12 +671,23 @@
             background: var(--accent-light);
             box-shadow: 0 0 20px var(--accent-glow);
         }
+        .timeline-item.education-item::before {
+            border-color: var(--teal);
+            box-shadow: 0 0 12px var(--teal-glow);
+        }
+        .timeline-item.education-item:hover::before {
+            background: var(--teal);
+            box-shadow: 0 0 20px var(--teal-glow);
+        }
         .timeline-date {
             font-family: var(--font-mono);
             font-size: 0.78rem;
             color: var(--accent-light);
             margin-bottom: 4px;
             letter-spacing: 0.03em;
+        }
+        .timeline-item.education-item .timeline-date {
+            color: var(--teal);
         }
         .timeline-item h4 {
             font-size: 1.05rem;
@@ -726,8 +714,24 @@
             margin-bottom: 8px;
             border: 1px solid var(--border);
         }
-
-        /* ── Skills ──────────────────────────── */
+        .timeline-badge {
+            display: inline-block;
+            font-size: 0.68rem;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .timeline-badge--work {
+            background: rgba(108, 92, 231, 0.15);
+            color: var(--accent-light);
+        }
+        .timeline-badge--edu {
+            background: rgba(0, 206, 201, 0.15);
+            color: var(--teal);
+        }
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -795,8 +799,6 @@
             color: var(--text-primary);
             background: rgba(108, 92, 231, 0.06);
         }
-
-        /* ── Gallery ─────────────────────────── */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -837,8 +839,6 @@
             color: #fff;
             font-weight: 500;
         }
-
-        /* ── Contact ─────────────────────────── */
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -903,8 +903,6 @@
         .contact-form button {
             align-self: flex-start;
         }
-
-        /* ── Footer ──────────────────────────── */
         .footer {
             border-top: 1px solid var(--border);
             padding: 32px 24px;
@@ -922,7 +920,6 @@
             text-decoration: underline;
         }
 
-        /* ── Responsive ──────────────────────── */
         @media (max-width: 900px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -1001,14 +998,11 @@
     </style>
 </head>
 <body>
-
-    <!-- Animated background elements -->
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-orb bg-orb--1" aria-hidden="true"></div>
     <div class="bg-orb bg-orb--2" aria-hidden="true"></div>
     <div class="bg-orb bg-orb--3" aria-hidden="true"></div>
 
-    <!-- Navigation -->
     <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-inner">
             <a href="#hero" class="nav-logo">M<span>.</span>Leali</a>
@@ -1017,7 +1011,7 @@
             </button>
             <ul class="nav-links" id="navLinks" role="menubar">
                 <li role="none"><a href="#about" role="menuitem">About</a></li>
-                <li role="none"><a href="#research" role="menuitem">Research</a></li>
+                <li role="none"><a href="#research" role="menuitem">Focus</a></li>
                 <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
                 <li role="none"><a href="#publications" role="menuitem">Publications</a></li>
                 <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
@@ -1027,466 +1021,431 @@
     </nav>
 
     <main class="main-content">
-
-        <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="hero-content">
                 <div class="hero-text">
                     <p class="hero-greeting">👋 Hello, I'm</p>
                     <h1>Marco <span class="highlight">Leali</span></h1>
-                    <p class="hero-role">AI & Robotics Researcher</p>
+                    <p class="hero-role">AI Engineer · NLP, LLMs & Conversational AI</p>
                     <p class="hero-bio">
-                        Passionate about the intersection of artificial intelligence, robotics, and cognitive systems.
-                        I investigate how intelligent machines can understand, interact with, and assist humans in
-                        meaningful ways — bridging the gap between cutting-edge AI research and real-world applications.
+                        Master's in Language Technology with 6+ years of experience spanning data analysis,
+                        business intelligence, and applied AI. I specialize in <strong>Natural Language Processing</strong>,
+                        <strong>fine-tuning LLMs</strong>, and building <strong>multimodal conversational AI</strong> systems —
+                        currently exploring human-robot interaction at the University of Gothenburg.
                     </p>
                     <div class="hero-buttons">
                         <a href="#contact" class="btn btn-primary">Get in Touch</a>
                         <a href="#projects" class="btn btn-outline">View Projects</a>
-                        <a href="cv.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download CV</a>
+                        <a href="https://www.linkedin.com/in/lealimarco/" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
                     </div>
                 </div>
                 <div class="hero-visual">
                     <div class="hero-avatar-wrapper">
                         <img src="pic.png" alt="Marco Leali portrait" class="hero-avatar" loading="eager" width="280" height="280">
                     </div>
-                    <div class="hero-badge hero-badge--1">🧠 AI Researcher</div>
-                    <div class="hero-badge hero-badge--2">🤖 Robotics Enthusiast</div>
+                    <div class="hero-badge hero-badge--1">🧠 NLP & LLMs</div>
+                    <div class="hero-badge hero-badge--2">🤖 Conversational AI</div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
         <section class="section" id="about">
             <span class="section-label">About Me</span>
-            <h2 class="section-title">Background &<br>Motivation</h2>
+            <h2 class="section-title">From Engineering<br>to AI</h2>
             <p class="section-subtitle">
-                I am driven by a fundamental question: <em>How can we create intelligent systems that genuinely
-                understand and augment human capabilities?</em> My work spans AI, robotics, and cognitive science.
+                A unique path: <em>Civil engineering → Data & BI → Language Technology & AI.</em>
+                I bring analytical rigor and a multidisciplinary perspective to every project.
             </p>
             <div class="interests-grid">
                 <div class="interest-card">
-                    <span class="interest-icon">🤖</span>
-                    <h3>Robotics & Autonomous Systems</h3>
-                    <p>Designing robots that perceive, reason, and act in dynamic environments — from autonomous
-                        navigation to dexterous manipulation.</p>
+                    <span class="interest-icon">💬</span>
+                    <h3>Natural Language Processing</h3>
+                    <p>Building robust NLP pipelines — from tokenization and POS-tagging to fine-tuning large language
+                        models for translation, error correction, and dialogue.</p>
                 </div>
                 <div class="interest-card">
                     <span class="interest-icon">🧠</span>
-                    <h3>Cognitive AI</h3>
-                    <p>Building models inspired by human cognition to enable more natural, interpretable, and adaptive
-                        artificial intelligence.</p>
+                    <h3>Large Language Models</h3>
+                    <p>Fine-tuning and deploying LLMs (Llama, Hugging Face models) for real-world applications including
+                        terminology-aware machine translation and conversational agents.</p>
                 </div>
                 <div class="interest-card">
-                    <span class="interest-icon">🔬</span>
-                    <h3>Human-Robot Interaction</h3>
-                    <p>Investigating how people perceive, trust, and collaborate with robots — with implications for
-                        healthcare, industry, and daily life.</p>
+                    <span class="interest-icon">🤖</span>
+                    <h3>Multimodal Human-AI Interaction</h3>
+                    <p>Integrating vision-language models with social robotics to create empathetic, context-aware
+                        interactions — the focus of my master's thesis at the University of Gothenburg.</p>
                 </div>
                 <div class="interest-card">
                     <span class="interest-icon">📊</span>
-                    <h3>Machine Learning Research</h3>
-                    <p>Developing robust learning algorithms for perception, decision-making, and multi-modal data
-                        fusion in real-world settings.</p>
+                    <h3>Data-Driven Decision Making</h3>
+                    <p>6+ years building BI dashboards, ETL pipelines, and analytics solutions that turn raw data into
+                        actionable business insights across EMEA markets.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Research Section -->
         <section class="section" id="research">
-            <span class="section-label">Research Focus</span>
-            <h2 class="section-title">What I Investigate</h2>
+            <span class="section-label">Expertise</span>
+            <h2 class="section-title">Core Competencies</h2>
             <p class="section-subtitle">
-                My research agenda addresses key challenges at the frontier of AI and robotics.
+                Tools, frameworks, and domains I work with daily.
             </p>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h4>🧠 Cognitive Modeling</h4>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:12px;">Understanding human
-                        decision-making to inform AI design.</p>
+                    <h4>🤖 AI & Machine Learning</h4>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>Python / PyTorch</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="90%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>Hugging Face / Transformers</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>LLMs & Prompt Engineering</span><span>80%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="80%"></div></div>
+                    </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Bayesian Models</span>
-                        <span class="skill-tag">Reinforcement Learning</span>
-                        <span class="skill-tag">Theory of Mind</span>
+                        <span class="skill-tag">Generative AI</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">VLMs</span>
+                        <span class="skill-tag">Tokenization</span>
+                        <span class="skill-tag">API Integration</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h4>👁️ Computer Vision</h4>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:12px;">Enabling machines to
-                        interpret visual information.</p>
+                    <h4>📊 Data Analysis & BI</h4>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>SQL (MySQL, SQL Server)</span><span>88%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="88%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>Power BI / Qlik Sense</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>ETL Pipelines</span><span>78%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="78%"></div></div>
+                    </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Object Detection</span>
-                        <span class="skill-tag">Scene Understanding</span>
-                        <span class="skill-tag">3D Reconstruction</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Visual Basic</span>
+                        <span class="skill-tag">KPI Monitoring</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h4>🗣️ NLP & Dialogue</h4>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:12px;">Natural communication
-                        between humans and machines.</p>
+                    <h4>💻 Programming</h4>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>Python</span><span>92%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="92%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>JavaScript / TypeScript</span><span>55%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="55%"></div></div>
+                    </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">LLMs</span>
-                        <span class="skill-tag">Dialogue Systems</span>
-                        <span class="skill-tag">Semantic Parsing</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Git & GitHub</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h4>⚙️ Robot Control</h4>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:12px;">From low-level control to
-                        high-level planning.</p>
+                    <h4>🌐 Languages</h4>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>Italian (Native)</span><span>100%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="100%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>English (Fluent)</span><span>95%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="95%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>Swedish (Basic)</span><span>30%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="30%"></div></div>
+                    </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">MPC</span>
-                        <span class="skill-tag">Imitation Learning</span>
-                        <span class="skill-tag">Path Planning</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">LaTeX</span>
+                        <span class="skill-tag">Linux</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section class="section" id="projects">
             <span class="section-label">Projects</span>
             <h2 class="section-title">Featured Work</h2>
             <p class="section-subtitle">
-                A selection of research projects and applied work at the intersection of AI, robotics, and human
-                factors.
+                Research projects and applied AI systems — from social robotics to industrial machine translation.
             </p>
             <div class="projects-grid">
-                <!-- Project 1: AI & Robotics -->
                 <article class="project-card">
-                    <img src="ai_robotics.png" alt="AI Robotics project visualization" class="project-image" loading="lazy" width="400" height="200">
+                    <img src="thesis.jpg" alt="Meditation experience with social robot Furhat" class="project-image" loading="lazy" width="400" height="200">
                     <div class="project-body">
                         <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">ROS</span>
-                            <span class="project-tag">PyTorch</span>
-                        </div>
-                        <h3>Adaptive Robot Navigation</h3>
-                        <p>Developed a reinforcement learning framework for robots to navigate crowded, dynamic
-                            environments while respecting social norms and pedestrian behavior.</p>
-                        <div class="project-links">
-                            <a href="#" class="link-demo">📄 Paper</a>
-                            <a href="#" class="link-gh">🔗 GitHub</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2: Psychologist / Cognitive -->
-                <article class="project-card">
-                    <img src="psychologist.png" alt="Cognitive systems research" class="project-image" loading="lazy" width="400" height="200">
-                    <div class="project-body">
-                        <div class="project-tags">
-                            <span class="project-tag">Cognitive Science</span>
+                            <span class="project-tag">LLMs</span>
+                            <span class="project-tag">VLMs</span>
                             <span class="project-tag">HRI</span>
-                            <span class="project-tag">User Study</span>
+                            <span class="project-tag">Python</span>
                         </div>
-                        <h3>Trust Calibration in Human-Robot Teams</h3>
-                        <p>Investigated how robot transparency and explainability affect human trust and team
-                            performance in collaborative tasks — with implications for clinical and industrial
-                            settings.</p>
+                        <h3>Meditation Experience with a Social Robot</h3>
+                        <p>Master's thesis: Built a multimodal interaction system using LLMs and Vision-Language Models
+                            on the Furhat robot to generate empathetic, context-aware meditation guidance.</p>
                         <div class="project-links">
-                            <a href="#" class="link-demo">📄 Paper</a>
-                            <a href="#" class="link-gh">🔗 GitHub</a>
+                            <a href="https://meditation-furhat-pre-interview.onrender.com" class="link-demo" target="_blank" rel="noopener">🌐 Live Demo</a>
+                            <a href="https://github.com/lealimarco/meditation-furhat-workshop-public" class="link-gh" target="_blank" rel="noopener">🔗 GitHub</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Project 3: Volvo -->
                 <article class="project-card">
-                    <img src="volvo.png" alt="Volvo collaboration project" class="project-image" loading="lazy" width="400" height="200">
-                    <div class="project-body">
-                        <div class="project-tags">
-                            <span class="project-tag">Autonomous Driving</span>
-                            <span class="project-tag">Safety</span>
-                            <span class="project-tag">Industry</span>
-                        </div>
-                        <h3>Driver Monitoring & Assistance Systems</h3>
-                        <p>Collaborated on AI-powered driver state detection using computer vision and physiological
-                            signals to enhance vehicle safety and adaptive automation.</p>
-                        <div class="project-links">
-                            <a href="#" class="link-demo">📄 Case Study</a>
-                            <a href="#" class="link-gh">🔗 Details</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 4: GEC -->
-                <article class="project-card">
-                    <img src="gec.png" alt="GEC research project" class="project-image" loading="lazy" width="400" height="200">
+                    <img src="volvo.png" alt="Volvo Trucks machine translation project" class="project-image" loading="lazy" width="400" height="200">
                     <div class="project-body">
                         <div class="project-tags">
                             <span class="project-tag">NLP</span>
-                            <span class="project-tag">Transformers</span>
-                            <span class="project-tag">Education</span>
+                            <span class="project-tag">Machine Translation</span>
+                            <span class="project-tag">spaCy</span>
+                            <span class="project-tag">Llama 3.1</span>
                         </div>
-                        <h3>Grammatical Error Correction with LLMs</h3>
-                        <p>Fine-tuned large language models for grammatical error correction in multilingual contexts,
-                            achieving state-of-the-art results on several benchmark datasets.</p>
+                        <h3>Terminology-Aware MT for Volvo Trucks</h3>
+                        <p>Designed a hybrid NLP pipeline combining rule-based terminology injection with LLM refinement
+                            (OmniGEC-8B, Ollama/Llama 3.1). Evaluated with BLEU, ROUGE, BERTScore, and custom TREU metric.</p>
                         <div class="project-links">
-                            <a href="#" class="link-demo">📄 Paper</a>
-                            <a href="#" class="link-gh">🔗 GitHub</a>
+                            <a href="https://github.com/lealimarco/Advanced_MT" class="link-demo" target="_blank" rel="noopener">📄 Details</a>
+                            <a href="https://github.com/lealimarco/Advanced_MT" class="link-gh" target="_blank" rel="noopener">🔗 GitHub</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Project 5: Thesis -->
                 <article class="project-card">
-                    <img src="thesis.jpg" alt="Thesis research visualization" class="project-image" loading="lazy" width="400" height="200">
+                    <img src="gec.png" alt="Grammatical Error Correction evaluation" class="project-image" loading="lazy" width="400" height="200">
                     <div class="project-body">
                         <div class="project-tags">
-                            <span class="project-tag">Thesis</span>
-                            <span class="project-tag">Research</span>
-                            <span class="project-tag">AI</span>
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">GEC</span>
+                            <span class="project-tag">Evaluation</span>
+                            <span class="project-tag">MultiGEC-2025</span>
                         </div>
-                        <h3>Master's Thesis: Intelligent Systems</h3>
-                        <p>Comprehensive research on integrating cognitive architectures with robotic platforms for
-                            more adaptive and context-aware autonomous behavior.</p>
+                        <h3>Semi-Manual Evaluation for Italian GEC</h3>
+                        <p>Small-scale reproduction study for MultiGEC-2025: evaluating grammatical error correction
+                            systems for Italian using semi-manual annotation and comparative metrics.</p>
                         <div class="project-links">
-                            <a href="#" class="link-demo">📄 Read Thesis</a>
-                            <a href="#" class="link-gh">🔗 Repository</a>
+                            <a href="#" class="link-demo">📄 Report</a>
+                            <a href="#" class="link-gh">🔗 Resources</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="ai_robotics.png" alt="Multimodal LLMs and body language" class="project-image" loading="lazy" width="400" height="200">
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="project-tag">VLMs</span>
+                            <span class="project-tag">Multimodal AI</span>
+                            <span class="project-tag">Emotion AI</span>
+                        </div>
+                        <h3>Do Multimodal LLMs Understand Body Language?</h3>
+                        <p>Context-sensitive evaluation of Vision-Language Models under emotion ambiguity. Investigating
+                            whether multimodal LLMs can interpret human body language in realistic scenarios.</p>
+                        <div class="project-links">
+                            <a href="#" class="link-demo">📄 Paper</a>
+                            <a href="#" class="link-gh">🔗 Resources</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="psychologist.png" alt="The Psychologist Dog chatbot" class="project-image" loading="lazy" width="400" height="200">
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="project-tag">Dialogue Systems</span>
+                            <span class="project-tag">Chatbot</span>
+                            <span class="project-tag">Personality AI</span>
+                        </div>
+                        <h3>The Psychologist Dog — Personality Analysis Chatbot</h3>
+                        <p>A dialogue system that analyzes user personality traits through natural conversation. Built as
+                            part of the Dialogue Systems course at the University of Gothenburg.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/lealimarco/the_psychologist_dog" class="link-demo" target="_blank" rel="noopener">📄 Details</a>
+                            <a href="https://github.com/lealimarco/the_psychologist_dog" class="link-gh" target="_blank" rel="noopener">🔗 GitHub</a>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- Publications Section -->
         <section class="section" id="publications">
-            <span class="section-label">Publications</span>
-            <h2 class="section-title">Selected Papers</h2>
+            <span class="section-label">Publications & Reports</span>
+            <h2 class="section-title">Academic Works</h2>
             <p class="section-subtitle">
-                Peer-reviewed contributions to top conferences and journals in AI and robotics.
+                Research outputs from my master's programme and collaborative projects.
             </p>
             <div class="pub-list">
                 <div class="pub-item">
-                    <span class="pub-year">2024</span>
+                    <span class="pub-year">2026</span>
                     <div class="pub-info">
-                        <h4>Adaptive Social Navigation via Multi-Agent Reinforcement Learning</h4>
-                        <p class="pub-authors">Marco Leali, et al.</p>
-                        <p class="pub-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems
-                            (IROS)</p>
-                        <div class="pub-links">
-                            <a href="#">PDF</a>
-                            <a href="#">BibTeX</a>
-                            <a href="#">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-year">2024</span>
-                    <div class="pub-info">
-                        <h4>Explainability Shapes Trust: Evidence from Human-Robot Collaboration Studies</h4>
-                        <p class="pub-authors">Marco Leali, et al.</p>
-                        <p class="pub-venue">ACM/IEEE International Conference on Human-Robot Interaction (HRI)</p>
-                        <div class="pub-links">
-                            <a href="#">PDF</a>
-                            <a href="#">BibTeX</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-year">2023</span>
-                    <div class="pub-info">
-                        <h4>Transformer-Based Grammatical Error Correction for Low-Resource Languages</h4>
-                        <p class="pub-authors">Marco Leali, et al.</p>
-                        <p class="pub-venue">Proceedings of the Conference on Empirical Methods in Natural Language
-                            Processing (EMNLP)</p>
-                        <div class="pub-links">
-                            <a href="#">PDF</a>
-                            <a href="#">BibTeX</a>
-                            <a href="#">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-year">2023</span>
-                    <div class="pub-info">
-                        <h4>Towards Context-Aware Autonomous Systems: A Cognitive Architecture Approach</h4>
+                        <h4>Meditation Experience with a Social Robot using LLMs and VLMs</h4>
                         <p class="pub-authors">Marco Leali</p>
-                        <p class="pub-venue">Master's Thesis, University of [Institution]</p>
+                        <p class="pub-venue">Master's Thesis — University of Gothenburg, Language Technology</p>
                         <div class="pub-links">
-                            <a href="#">PDF</a>
-                            <a href="#">BibTeX</a>
+                            <a href="https://meditation-furhat-pre-interview.onrender.com" target="_blank" rel="noopener">Demo</a>
+                            <a href="https://github.com/lealimarco/meditation-furhat-workshop-public" target="_blank" rel="noopener">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-year">2025</span>
+                    <div class="pub-info">
+                        <h4>Terminology-Aware Machine Translation using Hybrid Rule-Based Methods and LLMs</h4>
+                        <p class="pub-authors">Marco Leali — Volvo Trucks & University of Gothenburg Collaboration</p>
+                        <p class="pub-venue">Industrial Research Project — Swedish Automotive Sector</p>
+                        <div class="pub-links">
+                            <a href="https://github.com/lealimarco/Advanced_MT" target="_blank" rel="noopener">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-year">2025</span>
+                    <div class="pub-info">
+                        <h4>A Small-Scale Reproduction of Semi-Manual Evaluation for Italian GEC — MultiGEC-2025</h4>
+                        <p class="pub-authors">Marco Leali</p>
+                        <p class="pub-venue">Language Technology Resources — University of Gothenburg</p>
+                        <div class="pub-links">
+                            <a href="#">Report</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-year">2025</span>
+                    <div class="pub-info">
+                        <h4>Do Multimodal Large Language Models Understand Human Body Language? A Context-Sensitive Evaluation</h4>
+                        <p class="pub-authors">Marco Leali</p>
+                        <p class="pub-venue">AI: Cognitive Systems — University of Gothenburg</p>
+                        <div class="pub-links">
+                            <a href="#">Paper</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section class="section" id="experience">
-            <span class="section-label">Experience</span>
-            <h2 class="section-title">Timeline</h2>
+            <span class="section-label">Experience & Education</span>
+            <h2 class="section-title">Career Path</h2>
             <p class="section-subtitle">
-                Academic and industry positions that have shaped my research trajectory.
+                6+ years of professional experience across AI, data analysis, and engineering — plus two master's degrees.
             </p>
             <div class="timeline">
                 <div class="timeline-item">
-                    <span class="timeline-date">2024 — Present</span>
-                    <h4>Research Scientist</h4>
-                    <p class="timeline-org">AI & Robotics Lab</p>
-                    <p>Leading research on human-robot interaction and developing novel algorithms for adaptive
-                        autonomous systems. Supervising graduate students and publishing at top-tier venues.</p>
+                    <span class="timeline-date">Sep 2025 — Jan 2026</span>
+                    <img src="volvo.png" alt="Volvo Trucks" class="timeline-logo" loading="lazy" width="36" height="36">
+                    <h4>Machine Translation Engineer <span class="timeline-badge timeline-badge--work">Work</span></h4>
+                    <p class="timeline-org">Volvo Trucks & University of Gothenburg — Gothenburg, Sweden</p>
+                    <p>Designed a hybrid NLP and MT pipeline (Python, spaCy, Hugging Face, Ollama/Llama 3.1) with
+                        terminology-aware injection. Evaluated using BLEU, ROUGE, BERTScore, and custom TREU metrics.</p>
+                </div>
+                <div class="timeline-item education-item">
+                    <span class="timeline-date">Sep 2024 — Jun 2026</span>
+                    <h4>MSc in Language Technology <span class="timeline-badge timeline-badge--edu">Education</span></h4>
+                    <p class="timeline-org">University of Gothenburg — Sweden</p>
+                    <p>Focus: Machine Learning, LLMs, VLMs, Python, multimodal Human-AI interactions. Thesis on
+                        meditation experience with a social robot using LLMs and VLMs.</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-date">2023 — 2024</span>
-                    <img src="volvo.png" alt="Volvo" class="timeline-logo" loading="lazy" width="36" height="36">
-                    <h4>AI Research Intern</h4>
-                    <p class="timeline-org">Volvo Group</p>
-                    <p>Developed computer vision models for driver monitoring systems. Collaborated with
-                        cross-functional teams on AI safety and real-time inference on edge devices.</p>
+                    <span class="timeline-date">Nov 2022 — Nov 2024</span>
+                    <h4>Business Analyst <span class="timeline-badge timeline-badge--work">Work</span></h4>
+                    <p class="timeline-org">Smurfit Westrock Group — Lucca, Italy</p>
+                    <p>Analyzed large B2B datasets to support pricing and sales strategy. Built Power BI dashboards
+                        for KPI monitoring across EMEA markets and supported data-driven tender negotiations.</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-date">2021 — 2023</span>
-                    <img src="psychologist.png" alt="Cognitive Research" class="timeline-logo" loading="lazy" width="36" height="36">
-                    <h4>Graduate Researcher</h4>
-                    <p class="timeline-org">Cognitive Systems & HRI Lab</p>
-                    <p>Designed and conducted human-subject experiments on trust in human-robot teams. Published
-                        findings on explainability and transparency in AI systems.</p>
+                    <span class="timeline-date">Nov 2019 — Nov 2022</span>
+                    <h4>Technical Sales Engineer <span class="timeline-badge timeline-badge--work">Work</span></h4>
+                    <p class="timeline-org">Ghelfi SpA — Milan, Italy</p>
+                    <p>Developed pricing and sales performance reports for FMCG clients. Combined data analysis with
+                        technical-commercial decision making and long-term B2B relationship management.</p>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-date">2019 — 2021</span>
-                    <img src="ai_robotics.png" alt="Robotics Lab" class="timeline-logo" loading="lazy" width="36" height="36">
-                    <h4>Research Assistant</h4>
-                    <p class="timeline-org">Robotics & Autonomous Systems Group</p>
-                    <p>Built simulation environments for multi-agent reinforcement learning. Contributed to open-source
-                        robotics software and benchmark datasets.</p>
+                    <span class="timeline-date">Aug 2018 — Nov 2019</span>
+                    <h4>IT Consultant — Data Systems & BI <span class="timeline-badge timeline-badge--work">Work</span></h4>
+                    <p class="timeline-org">Mainsim Srl — Genova, Italy</p>
+                    <p>Designed SQL-based ETL pipelines, performed data integration (SQL Server, MySQL, VB), and built
+                        BI dashboards with Power BI and Qlik Sense for KPI monitoring.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Feb 2018 — Aug 2018</span>
+                    <h4>Process Engineer <span class="timeline-badge timeline-badge--work">Work</span></h4>
+                    <p class="timeline-org">Carcano SpA — Milan, Italy</p>
+                    <p>Analyzed production datasets to identify bottlenecks and plan process optimization strategies.</p>
+                </div>
+                <div class="timeline-item education-item">
+                    <span class="timeline-date">Sep 2015 — Dec 2017</span>
+                    <h4>MSc in Civil Engineering for Risk Mitigation <span class="timeline-badge timeline-badge--edu">Education</span></h4>
+                    <p class="timeline-org">Politecnico di Milano — Italy</p>
+                    <p>Thesis: "Design of slope-stabilizing piles for landslide risk mitigation." Grade: 110/110.</p>
+                </div>
+                <div class="timeline-item education-item">
+                    <span class="timeline-date">Sep 2012 — Sep 2015</span>
+                    <h4>BSc in Civil and Environmental Engineering <span class="timeline-badge timeline-badge--edu">Education</span></h4>
+                    <p class="timeline-org">Politecnico di Milano — Italy</p>
+                    <p>Thesis: "V. Bridge: SPT & DPSH and bearing capacity assessment."</p>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="section" id="skills">
-            <span class="section-label">Skills</span>
-            <h2 class="section-title">Technical Expertise</h2>
-            <p class="section-subtitle">
-                Tools, languages, and frameworks I use daily in my research and development.
-            </p>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>💻 Programming</h4>
-                    <div class="skill-bar-wrap">
-                        <div class="skill-bar-label"><span>Python</span><span>95%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="95%"></div></div>
-                    </div>
-                    <div class="skill-bar-wrap">
-                        <div class="skill-bar-label"><span>C++</span><span>70%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="70%"></div></div>
-                    </div>
-                    <div class="skill-bar-wrap">
-                        <div class="skill-bar-label"><span>JavaScript / TypeScript</span><span>60%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="60%"></div></div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MATLAB</span>
-                        <span class="skill-tag">Bash</span>
-                        <span class="skill-tag">R</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>🤖 AI & ML</h4>
-                    <div class="skill-bar-wrap">
-                        <div class="skill-bar-label"><span>PyTorch</span><span>90%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="90%"></div></div>
-                    </div>
-                    <div class="skill-bar-wrap">
-                        <div class="skill-bar-label"><span>TensorFlow</span><span>75%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="75%"></div></div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">Hugging Face</span>
-                        <span class="skill-tag">OpenCV</span>
-                        <span class="skill-tag">JAX</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>🔧 Robotics</h4>
-                    <div class="skill-bar-wrap">
-                        <div class="skill-bar-label"><span>ROS / ROS2</span><span>85%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="85%"></div></div>
-                    </div>
-                    <div class="skill-bar-wrap">
-                        <div class="skill-bar-label"><span>Gazebo / Isaac Sim</span><span>70%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="70%"></div></div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MoveIt</span>
-                        <span class="skill-tag">SLAM</span>
-                        <span class="skill-tag">Control Systems</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>📈 Tools & Methods</h4>
-                    <div class="skill-tags" style="margin-top:0;">
-                        <span class="skill-tag">Git & GitHub</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">LaTeX</span>
-                        <span class="skill-tag">Weights & Biases</span>
-                        <span class="skill-tag">Statistical Analysis</span>
-                        <span class="skill-tag">Experiment Design</span>
-                        <span class="skill-tag">CI/CD</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
         <section class="section" id="gallery">
             <span class="section-label">Gallery</span>
-            <h2 class="section-title">Conference & Lab Photos</h2>
+            <h2 class="section-title">Project Highlights</h2>
             <p class="section-subtitle">
-                Glimpses from conferences, lab demonstrations, and fieldwork.
+                Visual snapshots from my research and project work.
             </p>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="ai_robotics.png" alt="AI Robotics demonstration" loading="lazy" width="300" height="225">
-                    <span class="gallery-caption">Robot Demo — IROS 2024</span>
+                    <img src="thesis.jpg" alt="Furhat robot meditation setup" loading="lazy" width="300" height="225">
+                    <span class="gallery-caption">Furhat Robot — Meditation Study</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="thesis.jpg" alt="Thesis presentation" loading="lazy" width="300" height="225">
-                    <span class="gallery-caption">Thesis Defense Presentation</span>
+                    <img src="volvo.png" alt="Volvo Trucks MT pipeline" loading="lazy" width="300" height="225">
+                    <span class="gallery-caption">Volvo MT — Pipeline Architecture</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="volvo.png" alt="Volvo research lab" loading="lazy" width="300" height="225">
-                    <span class="gallery-caption">Volvo Research Collaboration</span>
+                    <img src="gec.png" alt="GEC evaluation results" loading="lazy" width="300" height="225">
+                    <span class="gallery-caption">Italian GEC — MultiGEC-2025</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="psychologist.png" alt="HRI study setup" loading="lazy" width="300" height="225">
-                    <span class="gallery-caption">HRI User Study Setup</span>
+                    <img src="ai_robotics.png" alt="Multimodal AI body language" loading="lazy" width="300" height="225">
+                    <span class="gallery-caption">VLM Body Language Evaluation</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="gec.png" alt="Conference poster session" loading="lazy" width="300" height="225">
-                    <span class="gallery-caption">Poster Session — EMNLP</span>
+                    <img src="psychologist.png" alt="Psychologist Dog chatbot" loading="lazy" width="300" height="225">
+                    <span class="gallery-caption">The Psychologist Dog — Chatbot</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="pic.png" alt="Lab group photo" loading="lazy" width="300" height="225">
-                    <span class="gallery-caption">Research Group — 2024</span>
+                    <img src="pic.png" alt="Marco Leali" loading="lazy" width="300" height="225">
+                    <span class="gallery-caption">Gothenburg — 2026</span>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section class="section" id="contact">
             <span class="section-label">Contact</span>
             <h2 class="section-title">Let's Connect</h2>
             <p class="section-subtitle">
-                I'm always open to research collaborations, PhD opportunities, and interesting discussions.
+                Open to research collaborations, PhD opportunities, and AI engineering roles across Europe.
             </p>
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <p>
-                        If you're interested in my research, looking for a collaborator, or considering me for a
-                        PhD position or research role — I'd love to hear from you. Reach out via email or follow
-                        me on my academic profiles.
+                        I'm based in <strong>Gothenburg, Sweden</strong> and always eager to discuss NLP, conversational AI,
+                        human-robot interaction, or new opportunities. Reach out via email, phone, or any of my profiles.
                     </p>
                     <div class="contact-links">
-                        <a href="mailto:leali.marco@example.com" class="contact-link">📧 leali.marco@example.com</a>
+                        <a href="mailto:lealimarco@hotmail.it" class="contact-link">📧 lealimarco@hotmail.it</a>
+                        <a href="tel:+46738712852" class="contact-link">📞 +46 73 871 28 52</a>
                         <a href="https://github.com/lealimarco" class="contact-link" target="_blank" rel="noopener">🔗 github.com/lealimarco</a>
-                        <a href="https://scholar.google.com" class="contact-link" target="_blank" rel="noopener">📚 Google Scholar</a>
-                        <a href="https://linkedin.com" class="contact-link" target="_blank" rel="noopener">💼 LinkedIn</a>
-                        <a href="https://twitter.com" class="contact-link" target="_blank" rel="noopener">🐦 Twitter / X</a>
+                        <a href="https://www.linkedin.com/in/lealimarco/" class="contact-link" target="_blank" rel="noopener">💼 linkedin.com/in/lealimarco</a>
+                        <a href="https://meditation-furhat-pre-interview.onrender.com" class="contact-link" target="_blank" rel="noopener">🤖 Thesis Demo</a>
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm" action="#" method="POST">
@@ -1498,42 +1457,33 @@
                 </form>
             </div>
         </section>
-
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Marco Leali. Built with care. Hosted on <a href="https://github.com/lealimarco/lealimarco.github.io" target="_blank" rel="noopener">GitHub Pages</a>.</p>
-        <p style="margin-top:4px;font-size:0.78rem;">Last updated: July 2026</p>
+        <p>&copy; 2026 Marco Leali — Gothenburg, Sweden. Built with care. Hosted on <a href="https://github.com/lealimarco/lealimarco.github.io" target="_blank" rel="noopener">GitHub Pages</a>.</p>
+        <p style="margin-top:4px;font-size:0.78rem;">Last updated: July 2026 · <a href="https://www.linkedin.com/in/lealimarco/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/lealimarco" target="_blank" rel="noopener">GitHub</a></p>
     </footer>
 
     <script>
         (function() {
-            // ── Navbar scroll effect ──────────
             const navbar = document.getElementById('navbar');
             const navToggle = document.getElementById('navToggle');
             const navLinks = document.getElementById('navLinks');
             const allNavLinks = navLinks.querySelectorAll('a');
 
             function updateNavScroll() {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
             }
             window.addEventListener('scroll', updateNavScroll, { passive: true });
             updateNavScroll();
 
-            // ── Mobile nav toggle ──────────────
             navToggle.addEventListener('click', () => {
                 const isOpen = navLinks.classList.toggle('open');
                 navToggle.classList.toggle('active');
                 navToggle.setAttribute('aria-expanded', isOpen);
                 document.body.style.overflow = isOpen ? 'hidden' : '';
             });
-
-            // Close mobile nav on link click
             allNavLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('open');
@@ -1543,49 +1493,39 @@
                 });
             });
 
-            // ── Active nav link on scroll ──────
             const sections = document.querySelectorAll('section[id]');
             const navAnchors = document.querySelectorAll('.nav-links a:not(.nav-cta)');
-
             function updateActiveLink() {
                 let currentId = '';
                 sections.forEach(section => {
                     const top = section.offsetTop - 100;
-                    if (window.scrollY >= top) {
-                        currentId = section.getAttribute('id');
-                    }
+                    if (window.scrollY >= top) currentId = section.getAttribute('id');
                 });
                 navAnchors.forEach(a => {
                     a.classList.remove('active');
-                    if (a.getAttribute('href') === '#' + currentId) {
-                        a.classList.add('active');
-                    }
+                    if (a.getAttribute('href') === '#' + currentId) a.classList.add('active');
                 });
             }
             window.addEventListener('scroll', updateActiveLink, { passive: true });
             updateActiveLink();
 
-            // ── Skill bar animation ────────────
             const skillBars = document.querySelectorAll('.skill-bar-fill[data-width]');
             let skillsAnimated = false;
-
             function animateSkillBars() {
                 if (skillsAnimated) return;
-                const skillsSection = document.getElementById('skills');
+                const skillsSection = document.getElementById('research');
                 if (!skillsSection) return;
                 const rect = skillsSection.getBoundingClientRect();
                 if (rect.top < window.innerHeight - 100 && rect.bottom > 0) {
                     skillsAnimated = true;
                     skillBars.forEach(bar => {
-                        const targetWidth = bar.getAttribute('data-width');
-                        bar.style.width = targetWidth + '%';
+                        bar.style.width = bar.getAttribute('data-width') + '%';
                     });
                 }
             }
             window.addEventListener('scroll', animateSkillBars, { passive: true });
             animateSkillBars();
 
-            // ── Contact form ───────────────────
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
@@ -1604,7 +1544,6 @@
                 });
             }
 
-            // ── Smooth reveal on scroll ────────
             const revealElements = document.querySelectorAll(
                 '.interest-card, .project-card, .pub-item, .timeline-item, .skill-category, .gallery-item');
             const revealObserver = new IntersectionObserver((entries) => {
@@ -1616,7 +1555,6 @@
                     }
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
             revealElements.forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(30px)';
@@ -1624,7 +1562,6 @@
                 revealObserver.observe(el);
             });
 
-            // ── Gallery lightbox (simple) ──────
             const galleryItems = document.querySelectorAll('.gallery-item');
             galleryItems.forEach(item => {
                 item.addEventListener('click', () => {
@@ -1632,19 +1569,14 @@
                     const caption = item.querySelector('.gallery-caption');
                     if (!img) return;
                     const overlay = document.createElement('div');
-                    overlay.style.cssText = `
-                position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.9);
-                display:flex;flex-direction:column;align-items:center;justify-content:center;
-                cursor:pointer;padding:40px;
-              `;
+                    overlay.style.cssText =
+                        'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.9);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;padding:40px;';
                     const bigImg = document.createElement('img');
                     bigImg.src = img.src;
-                    bigImg.style.cssText =
-                        'max-width:90vw;max-height:75vh;border-radius:12px;object-fit:contain;';
+                    bigImg.style.cssText = 'max-width:90vw;max-height:75vh;border-radius:12px;object-fit:contain;';
                     const capEl = document.createElement('p');
                     capEl.textContent = caption ? caption.textContent : '';
-                    capEl.style.cssText =
-                        'color:#fff;margin-top:16px;font-size:1rem;font-family:var(--font-sans);';
+                    capEl.style.cssText = 'color:#fff;margin-top:16px;font-size:1rem;font-family:var(--font-sans);';
                     overlay.appendChild(bigImg);
                     overlay.appendChild(capEl);
                     overlay.addEventListener('click', () => overlay.remove());
@@ -1652,7 +1584,7 @@
                 });
             });
 
-            console.log('🚀 Marco Leali — Portfolio ready. Best viewed with ambition.');
+            console.log('🚀 Marco Leali — Portfolio ready. Gothenburg, Sweden.');
         })();
     </script>
 </body>
