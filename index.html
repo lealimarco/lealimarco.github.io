@@ -104,7 +104,7 @@
         .nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
         .nav-logo {
             font-family: var(--font-sans);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--text-primary);
             text-decoration: none;
@@ -113,7 +113,6 @@
             align-items: center;
             gap: 8px;
         }
-        .nav-logo span { color: var(--accent-light); }
         .nav-links { display: flex; list-style: none; gap: 6px; align-items: center; }
         .nav-links a { color: var(--text-secondary); text-decoration: none; padding: 8px 14px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; transition: var(--transition-fast); letter-spacing: 0.01em; }
         .nav-links a:hover, .nav-links a:focus-visible { color: var(--text-primary); background: rgba(255, 255, 255, 0.04); }
@@ -155,7 +154,6 @@
             align-items: center;
             justify-content: center;
         }
-        /* Animated ring behind the image */
         .hero-avatar-wrapper::before {
             content: '';
             position: absolute;
@@ -243,12 +241,6 @@
         .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
         .skill-tag { font-size: 0.78rem; padding: 5px 12px; border-radius: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); color: var(--text-secondary); transition: var(--transition-fast); }
         .skill-tag:hover { border-color: var(--accent-light); color: var(--text-primary); background: rgba(108, 92, 231, 0.06); }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
-        .gallery-item { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/3; background: var(--bg-card); border: 1px solid var(--border); transition: var(--transition); cursor: pointer; position: relative; }
-        .gallery-item:hover { transform: scale(1.03); border-color: var(--border-light); box-shadow: var(--shadow-card); }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition-slow); }
-        .gallery-item:hover img { transform: scale(1.08); }
-        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 10px 14px; background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); font-size: 0.8rem; color: #fff; font-weight: 500; }
         .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
         .contact-info p { color: var(--text-secondary); margin-bottom: 18px; font-size: 0.95rem; line-height: 1.7; }
         .contact-links { display: flex; flex-direction: column; gap: 10px; }
@@ -277,10 +269,8 @@
             .nav-links a { padding: 12px 16px; border-radius: var(--radius-sm); font-size: 1rem; }
             .nav-toggle { display: block; }
             .section { padding: 70px 18px; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 500px) {
-            .gallery-grid { grid-template-columns: 1fr; }
             .hero-avatar-wrapper { width: 160px; height: 160px; }
             .skills-grid { grid-template-columns: 1fr; }
             .interests-grid { grid-template-columns: 1fr; }
@@ -311,8 +301,346 @@
     </nav>
 
     <main class="main-content">
-        <!-- ... rest of the sections remain exactly as before ... -->
-        <!-- I'm omitting the duplicated sections for brevity, but you must keep them exactly as in your previous message. -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-greeting">👋 Hello, I'm</p>
+                    <h1>Marco <span class="highlight">Leali</span></h1>
+                    <p class="hero-role">AI Engineer · NLP, LLMs & Conversational AI</p>
+                    <p class="hero-bio">
+                        Master's in Language Technology with 6+ years of experience spanning data analysis,
+                        business intelligence, and applied AI. I specialize in <strong>Natural Language Processing</strong>,
+                        <strong>fine-tuning LLMs</strong>, and building <strong>multimodal conversational AI</strong> systems —
+                        currently exploring human-robot interaction at the University of Gothenburg.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                        <a href="#projects" class="btn btn-outline">View Projects</a>
+                        <a href="https://www.linkedin.com/in/lealimarco/" class="btn btn-outline" target="_blank" rel="noopener">💼 LinkedIn</a>
+                        <a href="https://github.com/lealimarco" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+                        <a href="files/Leali_Marco_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">📄 Download CV</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-avatar-wrapper">
+                        <img src="images/pic.png" alt="Marco Leali portrait" class="hero-avatar" loading="eager" width="280" height="280">
+                    </div>
+                    <div class="hero-badge hero-badge--1">🧠 NLP & LLMs</div>
+                    <div class="hero-badge hero-badge--2">🤖 Conversational AI</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <span class="section-label">About Me</span>
+            <h2 class="section-title">From Engineering<br>to AI</h2>
+            <p class="section-subtitle">
+                A unique path: <em>Civil engineering → Data & BI → Language Technology & AI.</em>
+                I bring analytical rigor and a multidisciplinary perspective to every project.
+            </p>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <span class="interest-icon">💬</span>
+                    <h3>Natural Language Processing</h3>
+                    <p>Building robust NLP pipelines — from tokenization and POS-tagging to fine-tuning large language models for translation, error correction, and dialogue.</p>
+                </div>
+                <div class="interest-card">
+                    <span class="interest-icon">🧠</span>
+                    <h3>Large Language Models</h3>
+                    <p>Fine-tuning and deploying LLMs (Llama, Hugging Face models) for real-world applications including terminology-aware machine translation and conversational agents.</p>
+                </div>
+                <div class="interest-card">
+                    <span class="interest-icon">🤖</span>
+                    <h3>Multimodal Human-AI Interaction</h3>
+                    <p>Integrating vision-language models with social robotics to create empathetic, context-aware interactions — the focus of my master's thesis at the University of Gothenburg.</p>
+                </div>
+                <div class="interest-card">
+                    <span class="interest-icon">📊</span>
+                    <h3>Data-Driven Decision Making</h3>
+                    <p>6+ years building BI dashboards, ETL pipelines, and analytics solutions that turn raw data into actionable business insights across EMEA markets.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="research">
+            <span class="section-label">Expertise</span>
+            <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">Tools, frameworks, and domains I work with daily.</p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>🤖 AI & Machine Learning</h4>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>Python / PyTorch</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="90%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>Hugging Face / Transformers</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>LLMs & Prompt Engineering</span><span>80%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="80%"></div></div>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Generative AI</span><span class="skill-tag">RAG</span><span class="skill-tag">VLMs</span><span class="skill-tag">Tokenization</span><span class="skill-tag">API Integration</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>📊 Data Analysis & BI</h4>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>SQL (MySQL, SQL Server)</span><span>88%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="88%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>Power BI / Qlik Sense</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="85%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>ETL Pipelines</span><span>78%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="78%"></div></div>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Excel</span><span class="skill-tag">Visual Basic</span><span class="skill-tag">KPI Monitoring</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>💻 Programming</h4>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>Python</span><span>92%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="92%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>JavaScript / TypeScript</span><span>55%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="55%"></div></div>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C</span><span class="skill-tag">MATLAB</span><span class="skill-tag">HTML/CSS</span><span class="skill-tag">Git & GitHub</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>🌐 Languages</h4>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>Italian (Native)</span><span>100%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="100%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>English (Fluent)</span><span>95%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="95%"></div></div>
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar-label"><span>Swedish (Basic)</span><span>30%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width:0%" data-width="30%"></div></div>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span><span class="skill-tag">LaTeX</span><span class="skill-tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <span class="section-label">Projects</span>
+            <h2 class="section-title">Featured Work</h2>
+            <p class="section-subtitle">Research projects and applied AI systems — from social robotics to industrial machine translation.</p>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <img src="images/thesis.jpg" alt="Meditation experience with social robot Furhat" class="project-image" loading="lazy" width="400" height="200">
+                    <div class="project-body">
+                        <div class="project-tags"><span class="project-tag">LLMs</span><span class="project-tag">VLMs</span><span class="project-tag">HRI</span><span class="project-tag">Python</span></div>
+                        <h3>Meditation Experience with a Social Robot</h3>
+                        <p>Master's thesis: Built a multimodal interaction system using LLMs and Vision-Language Models on the Furhat robot to generate empathetic, context-aware meditation guidance.</p>
+                        <div class="project-links">
+                            <a href="https://meditation-furhat-pre-interview.onrender.com" class="link-demo" target="_blank" rel="noopener">🌐 Pre-Interview</a>
+                            <a href="https://github.com/lealimarco/meditation-furhat-workshop-public" class="link-gh" target="_blank" rel="noopener">🔗 GitHub</a>
+                            <a href="files/Leali%20Marco%20-%20Meditation%20Experience%20with%20a%20Social%20Robot%20using%20LLM%20and%20VLMs.pdf" class="link-gh" target="_blank" rel="noopener">📄 Paper</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <img src="images/volvo.png" alt="Volvo Trucks machine translation project" class="project-image" loading="lazy" width="400" height="200">
+                    <div class="project-body">
+                        <div class="project-tags"><span class="project-tag">NLP</span><span class="project-tag">Machine Translation</span><span class="project-tag">spaCy</span><span class="project-tag">Llama 3.1</span></div>
+                        <h3>Terminology-Aware MT for Volvo Trucks</h3>
+                        <p>Designed a hybrid NLP pipeline combining rule-based terminology injection with LLM refinement (OmniGEC-8B, Ollama/Llama 3.1). Evaluated with BLEU, ROUGE, BERTScore, and custom TREU metric.</p>
+                        <div class="project-links">
+                            <a href="files/Leali%20Marco%20-%20Terminology-Aware%20MT%20using%20Hybrid%20Rule-Based%20Methods%20and%20LLMs.pdf" class="link-gh" target="_blank" rel="noopener">📄 Paper</a>
+                            <a href="https://github.com/lealimarco/Advanced_MT" class="link-gh" target="_blank" rel="noopener">🔗 GitHub</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <img src="images/ai_robotics.png" alt="Multimodal LLMs and body language" class="project-image" loading="lazy" width="400" height="200">
+                    <div class="project-body">
+                        <div class="project-tags"><span class="project-tag">VLMs</span><span class="project-tag">Multimodal AI</span><span class="project-tag">Emotion AI</span></div>
+                        <h3>Do Multimodal LLMs Understand Body Language?</h3>
+                        <p>Context-sensitive evaluation of Vision-Language Models under emotion ambiguity. Investigating whether multimodal LLMs can interpret human body language in realistic scenarios.</p>
+                        <div class="project-links">
+                            <a href="files/Leali%20Marco%20-%20Do%20Multimodal%20Large%20Language%20Models%20Understand%20Human%20Body%20Language%3F%20A%20Context-Sensitive%20Evaluation%20under%20Emotion%20Ambiguity.pdf" class="link-demo" target="_blank" rel="noopener">📄 Paper</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <img src="images/psychologist.png" alt="The Psychologist Dog chatbot" class="project-image" loading="lazy" width="400" height="200">
+                    <div class="project-body">
+                        <div class="project-tags"><span class="project-tag">Dialogue Systems</span><span class="project-tag">Chatbot</span><span class="project-tag">Personality AI</span></div>
+                        <h3>The Psychologist Dog — Personality Analysis Chatbot</h3>
+                        <p>A dialogue system that analyzes user personality traits through natural conversation. Built as part of the Dialogue Systems course at the University of Gothenburg.</p>
+                        <div class="project-links">
+                            <a href="files/Leali%20Marco%20-%20The%20Psychologist%20Dog%20-%20A%20Personality%20Analysis%20Chatbot%20System.pdf" class="link-gh" target="_blank" rel="noopener">📄 Paper</a>
+                            <a href="https://github.com/lealimarco/the_psychologist_dog" class="link-gh" target="_blank" rel="noopener">🔗 GitHub</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <img src="images/gec.png" alt="Grammatical Error Correction evaluation" class="project-image" loading="lazy" width="400" height="200">
+                    <div class="project-body">
+                        <div class="project-tags"><span class="project-tag">NLP</span><span class="project-tag">GEC</span><span class="project-tag">Evaluation</span><span class="project-tag">MultiGEC-2025</span></div>
+                        <h3>Semi-Manual Evaluation for Italian GEC</h3>
+                        <p>Small-scale reproduction study for MultiGEC-2025: evaluating grammatical error correction systems for Italian using semi-manual annotation and comparative metrics.</p>
+                        <div class="project-links">
+                            <a href="files/Leali%20Marco%20-%20A%20Small-Scale%20Reproduction%20of%20Semi-Manual%20Evaluation%20for%20Italian%20Grammatical%20Error%20Correction%20for%20MultiGEC-2025.pdf" class="link-demo" target="_blank" rel="noopener">📄 Paper</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="publications">
+            <span class="section-label">Publications & Reports</span>
+            <h2 class="section-title">Academic Works</h2>
+            <p class="section-subtitle">Research outputs from my master's programme and collaborative projects.</p>
+            <div class="pub-list">
+                <div class="pub-item">
+                    <span class="pub-year">2026</span>
+                    <div class="pub-info">
+                        <h4>Meditation Experience with a Social Robot using LLMs and VLMs</h4>
+                        <p class="pub-authors">Marco Leali</p>
+                        <p class="pub-venue">Master's Thesis — University of Gothenburg, Language Technology</p>
+                        <div class="pub-links">
+                            <a href="https://meditation-furhat-pre-interview.onrender.com" target="_blank" rel="noopener">Demo</a>
+                            <a href="https://github.com/lealimarco/meditation-furhat-workshop-public" target="_blank" rel="noopener">Code</a>
+                            <a href="files/Leali%20Marco%20-%20Meditation%20Experience%20with%20a%20Social%20Robot%20using%20LLM%20and%20VLMs.pdf" target="_blank" rel="noopener">Paper</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-year">2025</span>
+                    <div class="pub-info">
+                        <h4>Terminology-Aware Machine Translation using Hybrid Rule-Based Methods and LLMs</h4>
+                        <p class="pub-authors">Marco Leali — Volvo Trucks & University of Gothenburg Collaboration</p>
+                        <p class="pub-venue">Industrial Research Project — Swedish Automotive Sector</p>
+                        <div class="pub-links">
+                            <a href="https://github.com/lealimarco/Advanced_MT" target="_blank" rel="noopener">Code</a>
+                            <a href="files/Leali%20Marco%20-%20Terminology-Aware%20MT%20using%20Hybrid%20Rule-Based%20Methods%20and%20LLMs.pdf" target="_blank" rel="noopener">Paper</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-year">2025</span>
+                    <div class="pub-info">
+                        <h4>A Small-Scale Reproduction of Semi-Manual Evaluation for Italian GEC — MultiGEC-2025</h4>
+                        <p class="pub-authors">Marco Leali</p>
+                        <p class="pub-venue">Language Technology Resources — University of Gothenburg</p>
+                        <div class="pub-links">
+                            <a href="files/Leali%20Marco%20-%20A%20Small-Scale%20Reproduction%20of%20Semi-Manual%20Evaluation%20for%20Italian%20Grammatical%20Error%20Correction%20for%20MultiGEC-2025.pdf" target="_blank" rel="noopener">PDF Report</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-year">2025</span>
+                    <div class="pub-info">
+                        <h4>Do Multimodal Large Language Models Understand Human Body Language? A Context-Sensitive Evaluation</h4>
+                        <p class="pub-authors">Marco Leali</p>
+                        <p class="pub-venue">AI: Cognitive Systems — University of Gothenburg</p>
+                        <div class="pub-links">
+                            <a href="files/Leali%20Marco%20-%20Do%20Multimodal%20Large%20Language%20Models%20Understand%20Human%20Body%20Language%3F%20A%20Context-Sensitive%20Evaluation%20under%20Emotion%20Ambiguity.pdf" target="_blank" rel="noopener">Paper</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="experience">
+            <span class="section-label">Experience & Education</span>
+            <h2 class="section-title">Career Path</h2>
+            <p class="section-subtitle">6+ years of professional experience across AI, data analysis, and engineering — plus two master's degrees.</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">Sep 2025 — Jan 2026</span>
+                    <img src="images/volvo.png" alt="Volvo Trucks" class="timeline-logo" loading="lazy" width="36" height="36">
+                    <h4>Machine Translation Engineer <span class="timeline-badge timeline-badge--work">Work</span></h4>
+                    <p class="timeline-org">Volvo Trucks & University of Gothenburg — Gothenburg, Sweden</p>
+                    <p>Designed a hybrid NLP and MT pipeline (Python, spaCy, Hugging Face, Ollama/Llama 3.1) with terminology-aware injection. Evaluated using BLEU, ROUGE, BERTScore, and custom TREU metrics.</p>
+                </div>
+                <div class="timeline-item education-item">
+                    <span class="timeline-date">Sep 2024 — Jun 2026</span>
+                    <h4>MSc in Language Technology <span class="timeline-badge timeline-badge--edu">Education</span></h4>
+                    <p class="timeline-org">University of Gothenburg — Sweden</p>
+                    <p>Focus: Machine Learning, LLMs, VLMs, Python, multimodal Human-AI interactions. Thesis on meditation experience with a social robot using LLMs and VLMs.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Nov 2022 — Nov 2024</span>
+                    <h4>Business Analyst <span class="timeline-badge timeline-badge--work">Work</span></h4>
+                    <p class="timeline-org">Smurfit Westrock Group — Lucca, Italy</p>
+                    <p>Analyzed large B2B datasets to support pricing and sales strategy. Supported data-driven decision making for tenders and contract negotiations.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Nov 2019 — Nov 2022</span>
+                    <h4>Technical Sales Engineer <span class="timeline-badge timeline-badge--work">Work</span></h4>
+                    <p class="timeline-org">Ghelfi SpA — Milan, Italy</p>
+                    <p>Developed pricing and sales performance reports for FMCG clients. Combined data analysis with technical-commercial decision making and long-term B2B relationship management.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Aug 2018 — Nov 2019</span>
+                    <h4>IT Consultant — Data Systems & BI <span class="timeline-badge timeline-badge--work">Work</span></h4>
+                    <p class="timeline-org">Mainsim Srl — Genova, Italy</p>
+                    <p>Designed SQL-based ETL pipelines, performed data integration (SQL Server, MySQL, VB), and built BI dashboards with Power BI and Qlik Sense for KPI monitoring.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Feb 2018 — Aug 2018</span>
+                    <h4>Process Engineer <span class="timeline-badge timeline-badge--work">Work</span></h4>
+                    <p class="timeline-org">Carcano SpA — Milan, Italy</p>
+                    <p>Analyzed production datasets to identify bottlenecks and plan process optimization strategies.</p>
+                </div>
+                <div class="timeline-item education-item">
+                    <span class="timeline-date">Sep 2015 — Dec 2017</span>
+                    <h4>MSc in Civil Engineering for Risk Mitigation <span class="timeline-badge timeline-badge--edu">Education</span></h4>
+                    <p class="timeline-org">Politecnico di Milano — Italy</p>
+                    <p>Thesis: "Design of slope-stabilizing piles for landslide risk mitigation."</p>
+                </div>
+                <div class="timeline-item education-item">
+                    <span class="timeline-date">Sep 2012 — Sep 2015</span>
+                    <h4>BSc in Civil and Environmental Engineering <span class="timeline-badge timeline-badge--edu">Education</span></h4>
+                    <p class="timeline-org">Politecnico di Milano — Italy</p>
+                    <p>Thesis: "V. Bridge: SPT & DPSH and bearing capacity assessment."</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <span class="section-label">Contact</span>
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">Open to research collaborations, PhD opportunities, and AI engineering roles across Europe.</p>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p>I'm based in <strong>Gothenburg, Sweden</strong> and always eager to discuss NLP, conversational AI, human-robot interaction, or new opportunities. Reach out via email, phone, or any of my profiles.</p>
+                    <div class="contact-links">
+                        <a href="mailto:lealimarco@hotmail.it" class="contact-link">📧 lealimarco@hotmail.it</a>
+                        <a href="https://github.com/lealimarco" class="contact-link" target="_blank" rel="noopener">🔗 github.com/lealimarco</a>
+                        <a href="https://www.linkedin.com/in/lealimarco/" class="contact-link" target="_blank" rel="noopener">💼 linkedin.com/in/lealimarco</a>
+                        <a href="https://meditation-furhat-pre-interview.onrender.com" class="contact-link" target="_blank" rel="noopener">🤖 Thesis Demo</a>
+                        <a href="files/Leali_Marco_CV.pdf" class="contact-link" target="_blank" rel="noopener">📄 Download Full CV</a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm" action="#" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
+                    <input type="email" name="email" placeholder="Your Email" required aria-label="Your email">
+                    <input type="text" name="subject" placeholder="Subject" aria-label="Subject">
+                    <textarea name="message" placeholder="Your Message..." required aria-label="Your message"></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -401,7 +729,7 @@
             }
 
             const revealElements = document.querySelectorAll(
-                '.interest-card, .project-card, .pub-item, .timeline-item, .skill-category, .gallery-item');
+                '.interest-card, .project-card, .pub-item, .timeline-item, .skill-category');
             const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -416,27 +744,6 @@
                 el.style.transform = 'translateY(30px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 revealObserver.observe(el);
-            });
-
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            galleryItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const img = item.querySelector('img');
-                    const caption = item.querySelector('.gallery-caption');
-                    if (!img) return;
-                    const overlay = document.createElement('div');
-                    overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.9);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;padding:40px;';
-                    const bigImg = document.createElement('img');
-                    bigImg.src = img.src;
-                    bigImg.style.cssText = 'max-width:90vw;max-height:75vh;border-radius:12px;object-fit:contain;';
-                    const capEl = document.createElement('p');
-                    capEl.textContent = caption ? caption.textContent : '';
-                    capEl.style.cssText = 'color:#fff;margin-top:16px;font-size:1rem;font-family:var(--font-sans);';
-                    overlay.appendChild(bigImg);
-                    overlay.appendChild(capEl);
-                    overlay.addEventListener('click', () => overlay.remove());
-                    document.body.appendChild(overlay);
-                });
             });
 
             console.log('🚀 Marco Leali — Portfolio ready. Gothenburg, Sweden.');
