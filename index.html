@@ -129,11 +129,6 @@
         .section-label { display: inline-block; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 12px; padding: 5px 12px; border-radius: 20px; background: rgba(108, 92, 231, 0.08); border: 1px solid rgba(108, 92, 231, 0.2); }
         .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; line-height: 1.2; color: var(--text-primary); }
         .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin-bottom: 48px; }
-        .section-subtitle.nowrap {
-            white-space: nowrap;
-            max-width: none;        /* remove the 600px limit */
-            overflow: visible;      /* no ellipsis */
-        }
         .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 24px 80px; max-width: var(--max-width); margin: 0 auto; position: relative; }
         .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; }
         .hero-text .hero-greeting { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-light); letter-spacing: 0.06em; margin-bottom: 8px; }
@@ -195,14 +190,14 @@
             -webkit-backdrop-filter: blur(10px);
             white-space: nowrap;
             animation: badgeBounce 3s ease-in-out infinite;
-            z-index: 2;  /* ← add this line */
+            z-index: 2;
         }
         .hero-badge--1 {top: -15px; right: -15px; animation-delay: 0s;}
         .hero-badge--2 {bottom: -15px; left: -15px; animation-delay: 1.5s;}
         .hero-badge--3 {
             top: 50%;
             left: 100%;
-            margin-left: 10px;     /* space between circle and badge */
+            margin-left: 10px;
             transform: translateY(-50%);
             animation-delay: 3s;
         }
@@ -260,10 +255,6 @@
         .skill-category { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px 20px; transition: var(--transition); }
         .skill-category:hover { border-color: var(--border-light); box-shadow: var(--shadow-card); }
         .skill-category h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 14px; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
-        .skill-bar-wrap { margin-bottom: 10px; }
-        .skill-bar-label { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 4px; }
-        .skill-bar { height: 6px; background: rgba(255, 255, 255, 0.05); border-radius: 3px; overflow: hidden; }
-        .skill-bar-fill { height: 100%; border-radius: 3px; transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1); background: linear-gradient(90deg, var(--accent), var(--teal)); }
         .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
         .skill-tag { font-size: 0.78rem; padding: 5px 12px; border-radius: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); color: var(--text-secondary); transition: var(--transition-fast); }
         .skill-tag:hover { border-color: var(--accent-light); color: var(--text-primary); background: rgba(108, 92, 231, 0.06); }
@@ -510,7 +501,7 @@
         <section class="section" id="projects">
             <span class="section-label">Projects</span>
             <h2 class="section-title">Academic Works</h2>
-            <p class="section-subtitle nowrap">Research projects and applied AI systems — from social robotics to industrial machine translation.</p>
+            <p class="section-subtitle">Research projects and applied AI systems — from social robotics to industrial machine translation.</p>
             <div class="projects-grid">
                 <article class="project-card">
                     <img src="images/thesis.jpg" alt="Meditation experience with social robot Furhat" class="project-image" loading="lazy" width="400" height="200">
@@ -577,7 +568,7 @@
         <section class="section" id="experience">
             <span class="section-label">Experience & Education</span>
             <h2 class="section-title">Career Path</h2>
-            <p class="section-subtitle nowrap">6+ years of professional experience across AI, data analysis, and engineering — plus two master's degrees.</p>
+            <p class="section-subtitle">6+ years of professional experience across AI, data analysis, and engineering — plus two master's degrees.</p>
             <div class="timeline">
                 <div class="timeline-item">
                     <span class="timeline-date">Sep 2025 — Jan 2026</span>
@@ -634,7 +625,7 @@
         <section class="section" id="contact">
             <span class="section-label">Contact</span>
             <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle nowrap">Open to research collaborations, PhD opportunities, and AI engineering roles across Europe.</p>
+            <p class="section-subtitle">Open to research collaborations, PhD opportunities, and AI engineering roles across Europe.</p>
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <p>I'm based in <strong>Gothenburg, Sweden</strong> and always eager to discuss NLP, conversational AI, human-robot interaction, or new opportunities. Reach out via email, phone, or any of my profiles.</p>
