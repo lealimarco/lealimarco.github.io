@@ -129,6 +129,11 @@
         .section-label { display: inline-block; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 12px; padding: 5px 12px; border-radius: 20px; background: rgba(108, 92, 231, 0.08); border: 1px solid rgba(108, 92, 231, 0.2); }
         .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; line-height: 1.2; color: var(--text-primary); }
         .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin-bottom: 48px; }
+        .section-subtitle.nowrap {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 24px 80px; max-width: var(--max-width); margin: 0 auto; position: relative; }
         .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; }
         .hero-text .hero-greeting { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-light); letter-spacing: 0.06em; margin-bottom: 8px; }
@@ -256,6 +261,37 @@
         .footer a { color: var(--accent-light); text-decoration: none; }
         .footer a:hover { text-decoration: underline; }
 
+        /* Cinematic quote & passion blocks */
+        .about-quote {
+            max-width: 700px;
+            margin: 40px auto;
+            text-align: center;
+            font-family: var(--font-serif);
+        }
+        .about-quote blockquote {
+            font-size: 1.6rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            border-left: 4px solid var(--accent-light);
+            padding-left: 24px;
+            margin: 0;
+        }
+        .about-quote .quote-author {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 12px;
+            font-style: normal;
+        }
+        .about-passion {
+            max-width: 700px;
+            margin: 40px auto 0;
+            text-align: center;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
         @media (max-width: 900px) {
             .hero-content { grid-template-columns: 1fr; text-align: center; gap: 40px; }
             .hero-text .hero-bio { max-width: 100%; }
@@ -294,7 +330,6 @@
                 <li role="none"><a href="#about" role="menuitem">About</a></li>
                 <li role="none"><a href="#research" role="menuitem">Focus</a></li>
                 <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
-                <!-- <li role="none"><a href="#publications" role="menuitem">Publications</a></li> -->
                 <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
                 <li role="none"><a href="#contact" class="nav-cta" role="menuitem">Contact</a></li>
             </ul>
@@ -325,21 +360,30 @@
                 <div class="hero-visual">
                     <div class="hero-avatar-wrapper">
                         <img src="images/pic.png" alt="Marco Leali portrait" class="hero-avatar" loading="eager" width="280" height="280">
+                        <div class="hero-badge hero-badge--1">🧠 NLP & LLMs</div>
+                        <div class="hero-badge hero-badge--2">🤖 Conversational AI</div>
+                        <div class="hero-badge hero-badge--3">🚀 Machine Learning</div>
                     </div>
-                    <div class="hero-badge hero-badge--1">🧠 NLP & LLMs</div>
-                    <div class="hero-badge hero-badge--2">🤖 Conversational AI</div>
-                    <div class="hero-badge hero-badge--3">🚀 Machine Learning</div>
                 </div>
             </div>
         </section>
 
         <section class="section" id="about">
             <span class="section-label">About Me</span>
-            <h2 class="section-title">From Engineering<br>to AI</h2>
+            <h2 class="section-title">From Engineering to AI</h2>
             <p class="section-subtitle">
                 A unique path: <em>Civil engineering → Data & BI → Language Technology & AI.</em>
                 I bring analytical rigor and a multidisciplinary perspective to every project.
             </p>
+
+            <!-- Dante Quote -->
+            <div class="about-quote">
+                <blockquote>
+                    "Fatti non foste a viver come bruti, ma per seguir virtute e canoscenza."
+                    <span class="quote-author">— Dante Alighieri, Inferno XXVI</span>
+                </blockquote>
+            </div>
+
             <div class="interests-grid">
                 <div class="interest-card">
                     <span class="interest-icon">💬</span>
@@ -361,18 +405,31 @@
                     <h3>Data-Driven Decision Making</h3>
                     <p>6+ years building BI dashboards, ETL pipelines, and analytics solutions that turn raw data into actionable business insights across EMEA markets.</p>
                 </div>
-                
                 <div class="interest-card">
                     <span class="interest-icon">💼</span>
                     <h3>IT & Data Consulting</h3>
                     <p>Experience designing SQL-based ETL pipelines, integrating data systems, and delivering BI dashboards (Power BI, Qlik Sense) for industrial clients.</p>
                 </div>
-                
                 <div class="interest-card">
                     <span class="interest-icon">📈</span>
                     <h3>Business & Sales Analysis</h3>
                     <p>Translated complex B2B data into pricing strategies, sales performance reports, and KPI monitoring for FMCG and packaging sectors, supporting contract negotiations and market expansion.</p>
                 </div>
+            </div>
+
+            <!-- Leonardo Quote & Personal Philosophy -->
+            <div class="about-quote" style="margin-top: 48px;">
+                <blockquote>
+                    "Simplicity is the ultimate sophistication."
+                    <span class="quote-author">— Leonardo da Vinci</span>
+                </blockquote>
+            </div>
+            <div class="about-passion">
+                <p>
+                    I love to combine different subjects, apparently opposite — art and science, meditation and robots (like my master's thesis).
+                    I believe that something is impossible until you do it.
+                    My motto: <strong>"Inspire and get inspired."</strong>
+                </p>
             </div>
         </section>
 
@@ -433,7 +490,7 @@
         <section class="section" id="projects">
             <span class="section-label">Projects</span>
             <h2 class="section-title">Academic Works</h2>
-            <p class="section-subtitle">Research projects and applied AI systems — from social robotics to industrial machine translation.</p>
+            <p class="section-subtitle nowrap">Research projects and applied AI systems — from social robotics to industrial machine translation.</p>
             <div class="projects-grid">
                 <article class="project-card">
                     <img src="images/thesis.jpg" alt="Meditation experience with social robot Furhat" class="project-image" loading="lazy" width="400" height="200">
@@ -497,65 +554,10 @@
             </div>
         </section>
 
-        <!-- <section class="section" id="publications">
-            <span class="section-label">Publications & Reports</span>
-            <h2 class="section-title">Academic Works</h2>
-            <p class="section-subtitle">Research outputs from my master's programme and collaborative projects.</p>
-            <div class="pub-list">
-                <div class="pub-item">
-                    <span class="pub-year">2026</span>
-                    <div class="pub-info">
-                        <h4>Meditation Experience with a Social Robot using LLMs and VLMs</h4>
-                        <p class="pub-authors">Marco Leali</p>
-                        <p class="pub-venue">Master's Thesis — University of Gothenburg, Language Technology</p>
-                        <div class="pub-links">
-                            <a href="https://meditation-furhat-pre-interview.onrender.com" target="_blank" rel="noopener">Demo</a>
-                            <a href="https://github.com/lealimarco/meditation-furhat-workshop-public" target="_blank" rel="noopener">Code</a>
-                            <a href="files/Leali%20Marco%20-%20Meditation%20Experience%20with%20a%20Social%20Robot%20using%20LLM%20and%20VLMs.pdf" target="_blank" rel="noopener">Paper</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-year">2025</span>
-                    <div class="pub-info">
-                        <h4>Terminology-Aware Machine Translation using Hybrid Rule-Based Methods and LLMs</h4>
-                        <p class="pub-authors">Marco Leali — Volvo Trucks & University of Gothenburg Collaboration</p>
-                        <p class="pub-venue">Industrial Research Project — Swedish Automotive Sector</p>
-                        <div class="pub-links">
-                            <a href="https://github.com/lealimarco/Advanced_MT" target="_blank" rel="noopener">Code</a>
-                            <a href="files/Leali%20Marco%20-%20Terminology-Aware%20MT%20using%20Hybrid%20Rule-Based%20Methods%20and%20LLMs.pdf" target="_blank" rel="noopener">Paper</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-year">2025</span>
-                    <div class="pub-info">
-                        <h4>A Small-Scale Reproduction of Semi-Manual Evaluation for Italian GEC — MultiGEC-2025</h4>
-                        <p class="pub-authors">Marco Leali</p>
-                        <p class="pub-venue">Language Technology Resources — University of Gothenburg</p>
-                        <div class="pub-links">
-                            <a href="files/Leali%20Marco%20-%20A%20Small-Scale%20Reproduction%20of%20Semi-Manual%20Evaluation%20for%20Italian%20Grammatical%20Error%20Correction%20for%20MultiGEC-2025.pdf" target="_blank" rel="noopener">PDF Report</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-year">2025</span>
-                    <div class="pub-info">
-                        <h4>Do Multimodal Large Language Models Understand Human Body Language? A Context-Sensitive Evaluation</h4>
-                        <p class="pub-authors">Marco Leali</p>
-                        <p class="pub-venue">AI: Cognitive Systems — University of Gothenburg</p>
-                        <div class="pub-links">
-                            <a href="files/Leali%20Marco%20-%20Do%20Multimodal%20Large%20Language%20Models%20Understand%20Human%20Body%20Language%3F%20A%20Context-Sensitive%20Evaluation%20under%20Emotion%20Ambiguity.pdf" target="_blank" rel="noopener">Paper</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
         <section class="section" id="experience">
             <span class="section-label">Experience & Education</span>
             <h2 class="section-title">Career Path</h2>
-            <p class="section-subtitle">6+ years of professional experience across AI, data analysis, and engineering — plus two master's degrees.</p>
+            <p class="section-subtitle nowrap">6+ years of professional experience across AI, data analysis, and engineering — plus two master's degrees.</p>
             <div class="timeline">
                 <div class="timeline-item">
                     <span class="timeline-date">Sep 2025 — Jan 2026</span>
@@ -612,7 +614,7 @@
         <section class="section" id="contact">
             <span class="section-label">Contact</span>
             <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle">Open to research collaborations, PhD opportunities, and AI engineering roles across Europe.</p>
+            <p class="section-subtitle nowrap">Open to research collaborations, PhD opportunities, and AI engineering roles across Europe.</p>
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <p>I'm based in <strong>Gothenburg, Sweden</strong> and always eager to discuss NLP, conversational AI, human-robot interaction, or new opportunities. Reach out via email, phone, or any of my profiles.</p>
@@ -624,13 +626,6 @@
                         <a href="files/Leali_Marco_CV.pdf" class="contact-link" target="_blank" rel="noopener">📄 Download Full CV</a>
                     </div>
                 </div>
-                <!-- <form class="contact-form" id="contactForm" action="#" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
-                    <input type="email" name="email" placeholder="Your Email" required aria-label="Your email">
-                    <input type="text" name="subject" placeholder="Subject" aria-label="Subject">
-                    <textarea name="message" placeholder="Your Message..." required aria-label="Your message"></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form> -->
             </div>
         </section>
     </main>
@@ -701,24 +696,6 @@
             }
             window.addEventListener('scroll', animateSkillBars, { passive: true });
             animateSkillBars();
-
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const btn = contactForm.querySelector('button');
-                    const originalText = btn.textContent;
-                    btn.textContent = '✓ Message Sent!';
-                    btn.style.background = '#00b894';
-                    btn.disabled = true;
-                    setTimeout(() => {
-                        btn.textContent = originalText;
-                        btn.style.background = '';
-                        btn.disabled = false;
-                        contactForm.reset();
-                    }, 2500);
-                });
-            }
 
             const revealElements = document.querySelectorAll(
                 '.interest-card, .project-card, .pub-item, .timeline-item, .skill-category');
