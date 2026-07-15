@@ -199,7 +199,13 @@
         }
         .hero-badge--1 {top: -15px; right: -15px; animation-delay: 0s;}
         .hero-badge--2 {bottom: -15px; left: -15px; animation-delay: 1.5s;}
-        .hero-badge--3 {top: 50%; right: -30px; transform: translateY(-50%); animation-delay: 3s;}
+        .hero-badge--3 {
+            top: 50%;
+            left: 100%;
+            margin-left: 10px;     /* space between circle and badge */
+            transform: translateY(-50%);
+            animation-delay: 3s;
+        }
         @keyframes badgeBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
         .interests-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
         .interest-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; transition: var(--transition); position: relative; overflow: hidden; }
