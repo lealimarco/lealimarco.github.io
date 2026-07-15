@@ -131,8 +131,8 @@
         .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin-bottom: 48px; }
         .section-subtitle.nowrap {
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            max-width: none;        /* remove the 600px limit */
+            overflow: visible;      /* no ellipsis */
         }
         .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 24px 80px; max-width: var(--max-width); margin: 0 auto; position: relative; }
         .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; }
