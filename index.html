@@ -51,6 +51,10 @@
             --nav-height: 64px;
             --max-width: 1120px;
             --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* New darker grey for buttons to improve contrast */
+            --btn-grey: #9E9E9E;
+            --btn-grey-hover: #757575;
         }
         html {
             scroll-behavior: smooth;
@@ -131,7 +135,7 @@
             background: var(--accent-dim);
         }
         .nav-cta {
-            background: var(--accent) !important;
+            background: var(--btn-grey) !important;
             color: #fff !important;
             padding: 8px 20px !important;
             border-radius: 22px !important;
@@ -139,7 +143,7 @@
             transition: var(--transition) !important;
         }
         .nav-cta:hover {
-            background: #d4d4d4 !important;
+            background: var(--btn-grey-hover) !important;
             box-shadow: 0 4px 16px var(--accent-glow);
             transform: translateY(-1px);
         }
@@ -291,12 +295,12 @@
             letter-spacing: 0.01em;
         }
         .btn-primary {
-            background: var(--accent);
+            background: var(--btn-grey);
             color: #fff;
             box-shadow: 0 4px 16px var(--accent-glow);
         }
         .btn-primary:hover {
-            background: #d4d4d4;
+            background: var(--btn-grey-hover);
             box-shadow: 0 6px 24px var(--accent-glow);
             transform: translateY(-2px);
         }
@@ -599,11 +603,11 @@
             gap: 5px;
         }
         .project-links .link-demo {
-            background: var(--accent);
+            background: var(--btn-grey);
             color: #fff;
         }
         .project-links .link-demo:hover {
-            background: #d4d4d4;
+            background: var(--btn-grey-hover);
         }
         .project-links .link-gh {
             background: rgba(0, 0, 0, 0.04);
