@@ -1,1248 +1,625 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Marco Leali - AI Engineer specializing in Machine Learning, LLMs and Applied AI. Based in Sweden." />
-    <meta name="keywords" content="Marco Leali, AI Engineer, NLP, LLMs, Conversational AI, Machine Learning, Language Technology, Gothenburg, Volvo, HRI" />
-    <meta name="author" content="Marco Leali" />
-    <meta property="og:title" content="Marco Leali | AI Engineer" />
-    <meta property="og:description" content="AI Engineer with 6+ years in data analysis and AI. Specialized in NLP pipelines, fine-tuning LLMs and multimodal human-AI interaction." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://lealimarco.github.io" />
-    <meta property="og:image" content="https://lealimarco.github.io/images/pic.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <title>Marco Leali | AI Engineer - NLP, LLMs & Conversational AI</title>
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'></text></svg>" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
-    <style>
-        
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        :root {
-            --bg: #fafaf9;
-            --bg-card: #ffffff;
-            --bg-card-hover: #f5f5f4;
-            --text: #111111;
-            --text-secondary: #2d2d2d;
-            --text-muted: #6b7280;
-            --accent: #C0C0C0;
-            --accent-dim: rgba(169, 169, 169, 0.15);
-            --accent-glow: rgba(169, 169, 169, 0.25);
-            --teal: #0d9488;
-            --teal-dim: rgba(13, 148, 136, 0.08);
-            --rose: #db2777;
-            --border: #e5e7eb;
-            --border-light: #d1d5db;
-            --radius: 10px;
-            --radius-lg: 16px;
-            --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.06);
-            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-            --font-serif: 'Playfair Display', Georgia, serif;
-            --nav-height: 64px;
-            --max-width: 1120px;
-            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            
-            /* New darker grey for buttons to improve contrast */
-            --btn-grey: #9E9E9E;
-            --btn-grey-hover: #757575;
-        }
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: var(--nav-height);
-        }
-        body {
-            font-family: var(--font-sans);
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marco Leali</title>
+<meta name="description" content="Marco Leali — AI Engineer and researcher in Machine Learning, NLP and Human-AI interaction." />
+<meta name="author" content="Marco Leali" />
 
-        /* ─── Navigation ─── */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            height: var(--nav-height);
-            background: rgba(250, 250, 249, 0.88);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--border);
-            transition: var(--transition);
-        }
-        .nav.scrolled {
-            background: rgba(250, 250, 249, 0.96);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
-        }
-        .nav-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .nav-logo {
-            font-family: var(--font-sans);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .nav-logo span {
-            color: var(--accent);
-        }
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 4px;
-            align-items: center;
-        }
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: var(--transition);
-            letter-spacing: 0.01em;
-        }
-        .nav-links a:hover,
-        .nav-links a:focus-visible {
-            color: var(--text);
-            background: rgba(0, 0, 0, 0.04);
-        }
-        .nav-links a.active {
-            color: var(--accent);
-            background: var(--accent-dim);
-        }
-        .nav-cta {
-            background: var(--btn-grey) !important;
-            color: #fff !important;
-            padding: 8px 20px !important;
-            border-radius: 22px !important;
-            font-weight: 600 !important;
-            transition: var(--transition) !important;
-        }
-        .nav-cta:hover {
-            background: var(--btn-grey-hover) !important;
-            box-shadow: 0 4px 16px var(--accent-glow);
-            transform: translateY(-1px);
-        }
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            color: var(--text);
-            z-index: 1001;
-        }
-        .nav-toggle span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--text);
-            margin: 5px 0;
-            border-radius: 2px;
-            transition: var(--transition);
-        }
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<!-- Source Sans Pro + EB Garamond (stand-in for QuestaGrande) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet" />
 
-        /* ─── Main ─── */
-        .main-content {
-            position: relative;
-            z-index: 1;
-        }
+<style>
+/* ==========================================================================
+   1. FONTS & TYPOGRAPHY
+   ========================================================================== */
+/* Questa Grande font from Font Squirrel — uncomment and drop the file into
+   assets/fonts/ if you want the exact typeface.
+@font-face {
+  font-family: 'QuestaGrande';
+  src: url('assets/fonts/QuestaGrande-Regular.woff2') format('woff2'),
+       url('assets/fonts/QuestaGrande-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*/
 
-        /* ─── Sections ─── */
-        .section {
-            padding: 80px 24px 100px;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            position: relative;
-        }
-        .section-label {
-            display: inline-block;
-            font-family: var(--font-mono);
-            font-size: 0.70rem;
-            font-weight: 500;
-            letter-spacing: 0.10em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 10px;
-            padding: 4px 14px;
-            border-radius: 20px;
-            background: var(--accent-dim);
-            border: 1px solid rgba(169, 169, 169, 0.3);
-        }
-        .section-title {
-            font-family: var(--font-serif);
-            font-size: clamp(1.8rem, 3vw, 2.6rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 12px;
-            line-height: 1.2;
-            color: var(--text);
-        }
-        .section-subtitle {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            max-width: 600px;
-            margin-bottom: 44px;
-            line-height: 1.6;
-        }
+/* ==========================================================================
+   2. CSS VARIABLES
+   ========================================================================== */
+:root {
+  --bs-primary: #4a4a4a;
+  --bs-primary-rgb: 74, 74, 74;
+  --gray-50:  #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --accent: #c43b89;
+  --accent-rgb: 196, 59, 137;
+}
 
-        /* ─── Hero ─── */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 24px 80px;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            position: relative;
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            width: 100%;
-        }
-        .hero-text .hero-greeting {
-            font-family: var(--font-mono);
-            font-size: 0.80rem;
-            color: var(--accent);
-            letter-spacing: 0.06em;
-            margin-bottom: 6px;
-        }
-        .hero-text h1 {
-            font-family: var(--font-serif);
-            font-size: clamp(2.8rem, 5.5vw, 4.2rem);
-            font-weight: 700;
-            line-height: 1.08;
-            letter-spacing: -0.03em;
-            margin-bottom: 6px;
-            color: var(--text);
-        }
-        .hero-text h1 .highlight {
-            background: linear-gradient(135deg, var(--accent), var(--teal));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .hero-text .hero-role {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            font-weight: 400;
-        }
-        .hero-text .hero-bio {
-            color: var(--text-muted);
-            font-size: 0.98rem;
-            max-width: 500px;
-            line-height: 1.8;
-            margin-bottom: 28px;
-        }
-        .hero-text .hero-bio strong {
-            color: var(--text-secondary);
-            font-weight: 600;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 11px 24px;
-            border-radius: 28px;
-            font-weight: 600;
-            font-size: 0.90rem;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: var(--transition);
-            letter-spacing: 0.01em;
-        }
-        .btn-primary {
-            background: var(--btn-grey);
-            color: #fff;
-            box-shadow: 0 4px 16px var(--accent-glow);
-        }
-        .btn-primary:hover {
-            background: var(--btn-grey-hover);
-            box-shadow: 0 6px 24px var(--accent-glow);
-            transform: translateY(-2px);
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--text);
-            border: 1.5px solid var(--border-light);
-        }
-        .btn-outline:hover {
-            border-color: var(--accent);
-            background: var(--accent-dim);
-            transform: translateY(-2px);
-        }
+/* ==========================================================================
+   3. BASE STYLES
+   ========================================================================== */
+body {
+  font-family: 'Source Sans Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--gray-800);
+}
+main { flex: 1; }
 
-        /* ─── Hero Visual ─── */
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        .hero-avatar-wrapper {
-            position: relative;
-            width: 260px;
-            height: 260px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-avatar-wrapper::before {
-            content: '';
-            position: absolute;
-            inset: -5px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--teal), var(--rose));
-            z-index: 0;
-            animation: avatarRotate 10s linear infinite;
-            opacity: 0.5;
-        }
-        @keyframes avatarRotate {
-            0% {
-                filter: hue-rotate(0deg);
-            }
-            100% {
-                filter: hue-rotate(360deg);
-            }
-        }
-        .hero-avatar {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            background: var(--bg-card);
-            border: 4px solid var(--bg);
-            position: relative;
-            z-index: 1;
-        }
-        .hero-badge {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 8px 14px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            box-shadow: var(--shadow-card);
-            white-space: nowrap;
-            animation: badgeBounce 3.5s ease-in-out infinite;
-            z-index: 2;
-            color: var(--text-secondary);
-        }
-        .hero-badge--1 {
-            top: -12px;
-            right: -12px;
-            animation-delay: 0s;
-        }
-        .hero-badge--2 {
-            bottom: -12px;
-            left: -12px;
-            animation-delay: 1.6s;
-        }
-        .hero-badge--3 {
-            top: 50%;
-            left: 100%;
-            margin-left: 12px;
-            transform: translateY(-50%);
-            animation-delay: 3.2s;
-        }
-        @keyframes badgeBounce {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-6px);
-            }
-        }
+/* Navigation */
+.navbar-brand {
+  font-size: 1.65rem;
+  font-family: 'EB Garamond', 'QuestaGrande', 'Georgia', 'Times New Roman', serif;
+  font-weight: 500;
+  color: var(--gray-800) !important;
+}
+.navbar-nav .nav-link {
+  position: relative;
+  text-transform: lowercase;
+  color: var(--gray-700);
+}
+.navbar-nav .nav-link:hover { color: var(--accent); }
+.nav-link.active { font-weight: 600; color: var(--gray-900) !important; }
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.35rem;
+  height: 2px;
+  background-color: var(--accent);
+}
+@media (max-width: 991.98px) {
+  .nav-link.active::after { left: 0; right: auto; width: 1.5rem; bottom: 0.25rem; }
+}
 
-        /* ─── About / Interests ─── */
-        .interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
-            margin-top: 16px;
-        }
-        .interest-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 24px 20px;
-            transition: var(--transition);
-            box-shadow: var(--shadow-card);
-        }
-        .interest-card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--border-light);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-        }
-        .interest-icon {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .interest-card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: var(--text);
-        }
-        .interest-card p {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: var(--gray-800);
+}
 
-        /* ─── Quote ─── */
-        .about-quote {
-            max-width: 680px;
-            margin: 36px auto 32px;
-            text-align: center;
-        }
-        .about-quote blockquote {
-            font-family: var(--font-serif);
-            font-size: 1.4rem;
-            font-style: italic;
-            color: var(--text-secondary);
-            border-left: 4px solid var(--accent);
-            padding-left: 24px;
-            margin: 0;
-            line-height: 1.5;
-        }
-        .about-quote .quote-author {
-            display: block;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 10px;
-            font-style: normal;
-            font-family: var(--font-sans);
-        }
-        .about-passion {
-            max-width: 680px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 0.98rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-        .about-passion strong {
-            color: var(--text);
-        }
+/* ==========================================================================
+   4. HERO
+   ========================================================================== */
+.hero-section {
+  background-color: var(--gray-50);
+  padding: 4rem 0;
+}
+.profile-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+.hero-title {
+  color: var(--gray-700);
+  font-weight: 500;
+  font-size: 2.25rem;
+  margin-bottom: 0.25rem;
+}
+.hero-affiliation { color: var(--gray-700); font-size: 1.05rem; }
+.hero-social-icons a {
+  color: var(--gray-500);
+  transition: color 0.2s;
+  font-size: 1.25rem;
+  margin-right: 0.85rem;
+}
+.hero-social-icons a:hover { color: var(--accent); }
+.hashtag { color: var(--accent); font-weight: 500; white-space: nowrap; }
 
-        /* ─── Skills ─── */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 18px;
-        }
-        .skill-category {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 20px 18px;
-            transition: var(--transition);
-            box-shadow: var(--shadow-card);
-        }
-        .skill-category:hover {
-            border-color: var(--border-light);
-            box-shadow: var(--shadow-hover);
-        }
-        .skill-category h4 {
-            font-size: 0.92rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-        .skill-tag {
-            font-size: 0.72rem;
-            padding: 4px 12px;
-            border-radius: 14px;
-            background: rgba(0, 0, 0, 0.03);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            transition: var(--transition);
-        }
-        .skill-tag:hover {
-            border-color: var(--accent);
-            color: var(--text);
-            background: var(--accent-dim);
-        }
+/* ==========================================================================
+   5. CONTENT SECTIONS
+   ========================================================================== */
+.content-section { padding: 4rem 0; }
+.content-section-white { background-color: white; }
+.content-section-gray  { background-color: var(--gray-50); }
+.section-header { color: var(--gray-800); }
+.section-icon   { color: var(--gray-600); }
 
-        /* ─── Projects ─── */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 22px;
-        }
-        .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            box-shadow: var(--shadow-card);
-        }
-        .project-card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--border-light);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-        }
-        .project-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-        }
-        .project-body {
-            padding: 18px 18px 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin-bottom: 8px;
-        }
-        .project-tag {
-            font-family: var(--font-mono);
-            font-size: 0.66rem;
-            padding: 3px 10px;
-            border-radius: 12px;
-            background: var(--accent-dim);
-            color: var(--accent);
-            letter-spacing: 0.02em;
-        }
-        .project-card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-            color: var(--text);
-        }
-        .project-card p {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            flex: 1;
-            margin-bottom: 12px;
-            line-height: 1.6;
-        }
-        .project-links {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .project-links a {
-            font-size: 0.78rem;
-            padding: 6px 14px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .project-links .link-demo {
-            background: var(--btn-grey);
-            color: #fff;
-        }
-        .project-links .link-demo:hover {
-            background: var(--btn-grey-hover);
-        }
-        .project-links .link-gh {
-            background: rgba(0, 0, 0, 0.04);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-light);
-        }
-        .project-links .link-gh:hover {
-            background: rgba(0, 0, 0, 0.08);
-            color: var(--text);
-        }
+/* News items */
+.news-item {
+  border-left: 3px solid var(--gray-400);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+.news-title { color: var(--gray-800); font-weight: 600; margin-bottom: 0.15rem; }
+.news-date  { color: var(--gray-500); font-size: 0.9rem; font-weight: 600; }
+.news-description { color: var(--gray-600); font-size: 0.95rem; }
+.news-description a,
+.news-description a:visited,
+.news-description a:link {
+  color: var(--gray-800) !important;
+  text-decoration: underline;
+}
+.news-description a:hover,
+.news-description a:focus { color: var(--accent) !important; }
+.news-toggle-btn {
+  background-color: var(--gray-200);
+  color: var(--gray-700);
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.5rem;
+}
+.news-toggle-btn:hover { background-color: var(--gray-300); color: var(--gray-900); }
 
-        /* ─── Timeline ─── */
-        .timeline {
-            position: relative;
-            padding-left: 28px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 6px;
-            top: 4px;
-            bottom: 4px;
-            width: 2px;
-            background: linear-gradient(180deg, var(--accent), var(--teal), var(--rose));
-            border-radius: 1px;
-            opacity: 0.4;
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 28px;
-            padding-left: 22px;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -24px;
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--bg-card);
-            border: 2.5px solid var(--accent);
-            box-shadow: 0 0 0 2px var(--bg);
-            transition: var(--transition);
-        }
-        .timeline-item:hover::before {
-            background: var(--accent);
-            box-shadow: 0 0 0 2px var(--bg), 0 0 20px var(--accent-glow);
-        }
-        .timeline-item.education-item::before {
-            border-color: var(--teal);
-        }
-        .timeline-item.education-item:hover::before {
-            background: var(--teal);
-            box-shadow: 0 0 0 2px var(--bg), 0 0 20px rgba(13, 148, 136, 0.25);
-        }
-        .timeline-date {
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            color: var(--accent);
-            margin-bottom: 2px;
-            letter-spacing: 0.03em;
-        }
-        .timeline-item.education-item .timeline-date {
-            color: var(--teal);
-        }
-        .timeline-item h4 {
-            font-size: 1.0rem;
-            font-weight: 600;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-        .timeline-item .timeline-org {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            margin-bottom: 2px;
-        }
-        .timeline-item p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-        .timeline-logo {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            object-fit: contain;
-            background: var(--bg-card);
-            padding: 3px;
-            border: 1px solid var(--border);
-            margin-bottom: 4px;
-        }
-        .timeline-badge {
-            display: inline-block;
-            font-size: 0.62rem;
-            padding: 2px 10px;
-            border-radius: 10px;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            vertical-align: middle;
-        }
-        .timeline-badge--work {
-            background: var(--accent-dim);
-            color: var(--accent);
-        }
-        .timeline-badge--edu {
-            background: var(--teal-dim);
-            color: var(--teal);
-        }
+/* Publications / selected projects */
+.selected-publication-item { margin-bottom: 1.25rem; }
+.selected-publication-item a,
+.selected-publication-item a:visited,
+.selected-publication-item a:link {
+  color: var(--gray-800) !important;
+  text-decoration: underline;
+}
+.selected-publication-item a:hover,
+.selected-publication-item a:focus { color: var(--accent) !important; }
+.selected-publication-title { color: var(--gray-800); font-weight: 600; }
+.selected-publication-authors { color: var(--gray-600); font-size: 0.95rem; }
+.selected-publication-venue { color: var(--gray-700); font-weight: 500; font-size: 0.95rem; }
 
-        /* ─── Contact ─── */
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 32px;
-            align-items: start;
-        }
-        .contact-info p {
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        .contact-info p strong {
-            color: var(--text);
-        }
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.90rem;
-            transition: var(--transition);
-            padding: 6px 0;
-        }
-        .contact-link:hover {
-            color: var(--accent);
-        }
+/* Research interest list */
+.research-interests-list { color: var(--gray-600); line-height: 1.7; }
+.research-interest-topic  { color: var(--gray-700); font-weight: 600; }
 
-        /* ─── Footer ─── */
-        .footer {
-            border-top: 1px solid var(--border);
-            padding: 28px 24px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            position: relative;
-            z-index: 1;
-            background: var(--bg);
-        }
-        .footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
+/* Experience / education list */
+.cv-entry { margin-bottom: 1.25rem; }
+.cv-role { color: var(--gray-800); font-weight: 600; }
+.cv-org  { color: var(--gray-600); }
+.cv-date { color: var(--gray-500); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cv-desc { color: var(--gray-600); font-size: 0.95rem; margin-top: 0.25rem; }
 
-        /* ─── Responsive ─── */
-        @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 32px;
-            }
-            .hero-text .hero-bio {
-                max-width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
-            .hero-visual {
-                order: -1;
-            }
-            .hero-avatar-wrapper {
-                width: 190px;
-                height: 190px;
-            }
-            .hero-badge {
-                display: none;
-            }
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 270px;
-                height: 100vh;
-                background: var(--bg-card);
-                flex-direction: column;
-                padding: 80px 24px 24px;
-                gap: 2px;
-                transition: var(--transition);
-                border-left: 1px solid var(--border);
-                box-shadow: -4px 0 30px rgba(0, 0, 0, 0.08);
-            }
-            .nav-links.open {
-                right: 0;
-            }
-            .nav-links a {
-                padding: 12px 16px;
-                border-radius: var(--radius);
-                font-size: 0.95rem;
-            }
-            .nav-toggle {
-                display: block;
-            }
-            .section {
-                padding: 60px 16px 72px;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .interests-grid {
-                grid-template-columns: 1fr;
-            }
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            .about-quote blockquote {
-                font-size: 1.2rem;
-                padding-left: 18px;
-            }
-        }
-        @media (max-width: 500px) {
-            .hero-avatar-wrapper {
-                width: 150px;
-                height: 150px;
-            }
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+/* Contact */
+.contact-info {
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  padding: 2rem;
+}
+.contact-info i { color: var(--gray-600); margin-right: 0.5rem; }
+.contact-link {
+  color: var(--gray-700);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-400);
+}
+.contact-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Biography / prose */
+.prose-text { line-height: 1.8; color: var(--gray-700); }
+.prose-text a,
+.prose-text a:visited,
+.prose-text a:link {
+  color: var(--gray-800);
+  text-decoration: underline;
+  text-decoration-color: var(--gray-400);
+}
+.prose-text a:hover,
+.prose-text a:focus {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* ==========================================================================
+   6. FOOTER
+   ========================================================================== */
+.site-footer {
+  background-color: var(--gray-50);
+  border-top: 1px solid var(--gray-200);
+  padding: 1.5rem 0;
+  color: var(--gray-500);
+  font-size: 0.9rem;
+}
+
+/* Section headings */
+.section-heading {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 1.5rem;
+}
+.section-heading i { color: var(--gray-500); margin-right: 0.5rem; }
+</style>
 </head>
 <body>
 
-    <!-- ─── Navigation ─── -->
-    <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-inner">
-            <a href="#hero" class="nav-logo">Marco <span>Leali</span></a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="navLinks" role="menubar">
-                <li role="none"><a href="#about" role="menuitem">About</a></li>
-                <li role="none"><a href="#research" role="menuitem">Focus</a></li>
-                <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
-                <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
-                <li role="none"><a href="#contact" class="nav-cta" role="menuitem">Contact</a></li>
-            </ul>
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Marco Leali</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mainNav" aria-controls="mainNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">about</a></li>
+        <li class="nav-item"><a class="nav-link" href="#research">research</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-3 text-center mb-4 mb-md-0">
+          <img src="images/pic.png" alt="Marco Leali" class="profile-img" />
         </div>
-    </nav>
+        <div class="col-md-9">
+          <h1 class="hero-title">Marco Leali</h1>
+          <p class="hero-affiliation mb-2">
+            AI Engineer — Machine Learning, NLP &amp; Human–AI Interaction
+          </p>
+          <p class="hero-affiliation mb-3">
+            MSc in Language Technology, University of Gothenburg · Stockholm, Sweden
+          </p>
+          <div class="hero-social-icons">
+            <a href="mailto:lealimarco@hotmail.it" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/lealimarco" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/lealimarco/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="files/Leali_Marco_CV.pdf" target="_blank" rel="noopener" title="CV"><i class="fas fa-file-pdf"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- ─── Main ─── -->
-    <main class="main-content">
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section class="content-section content-section-white" id="about">
+    <div class="container">
+      <h2 class="section-heading"><i class="fas fa-user"></i>About</h2>
+      <div class="prose-text">
+        <p>
+          I am an AI engineer with a Master's degree in Language Technology from the University of
+          Gothenburg and six years of experience across data analysis, software engineering, business
+          intelligence and applied AI. My work focuses on natural language processing, large language
+          models, and multimodal human–AI interaction.
+        </p>
+        <p>
+          Most recently I designed a hybrid NLP and machine translation pipeline in collaboration with
+          Volvo Trucks, combining terminology-aware rule-based methods with LLM refinement. For my
+          Master's thesis I built a real-time multimodal conversational system integrating LLMs,
+          vision-language models and the Furhat social robot, and conducted user studies on human–AI
+          experience design.
+        </p>
+        <p>
+          My path into AI came through civil engineering, data analysis and technical sales. That
+          background shapes how I approach research: I care about rigour, but also about systems that
+          work in practice, with real users and real constraints.
+        </p>
+      </div>
+    </div>
+  </section>
 
-        <!-- ═══ HERO ═══ -->
-        <section class="hero" id="hero">
-            <div class="hero-grid">
-                <div class="hero-text">
-                    <p class="hero-greeting">👋 Hello, I'm</p>
-                    <h1>Marco <span class="highlight">Leali</span></h1>
-                    <p class="hero-role">AI Engineer · NLP, LLMs &amp; Conversational AI</p>
-                    <p class="hero-bio">
-                        Master's in Language Technology with 6+ years of experience spanning data analysis,
-                        business intelligence and consulting. I specialize in <strong>Natural Language Processing</strong>,
-                        <strong>fine-tuning LLMs</strong> and building <strong>multimodal conversational AI</strong> systems.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                        <a href="#projects" class="btn btn-outline">View Projects</a>
-                        <a href="https://www.linkedin.com/in/lealimarco/" class="btn btn-outline" target="_blank" rel="noopener">💼 LinkedIn</a>
-                        <a href="https://github.com/lealimarco" class="btn btn-outline" target="_blank" rel="noopener">🔗 GitHub</a>
-                        <!-- <a href="files/Leali_Marco_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">📄 Download CV</a> -->
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-avatar-wrapper">
-                        <img src="images/pic.png" alt="Marco Leali portrait" class="hero-avatar" loading="eager" width="260" height="260" />
-                        <div class="hero-badge hero-badge--1">🧠 NLP &amp; LLMs</div>
-                        <div class="hero-badge hero-badge--2">🤖 Conversational AI</div>
-                        <div class="hero-badge hero-badge--3">🚀 Machine Learning</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- ═══════════ RESEARCH INTERESTS ═══════════ -->
+  <section class="content-section content-section-gray" id="research">
+    <div class="container">
+      <h2 class="section-heading"><i class="fas fa-flask"></i>Research Interests</h2>
+      <ul class="research-interests-list">
+        <li>
+          <span class="research-interest-topic">Natural language processing</span> —
+          machine translation, grammatical error correction, information extraction, and
+          evaluation methodology.
+        </li>
+        <li>
+          <span class="research-interest-topic">Large language and vision-language models</span> —
+          fine-tuning, prompt engineering, retrieval-augmented generation, and multimodal reasoning.
+        </li>
+        <li>
+          <span class="research-interest-topic">Human–AI interaction</span> —
+          conversational agents, social robotics, and empirical evaluation of how people experience
+          AI systems.
+        </li>
+        <li>
+          <span class="research-interest-topic">Applied machine learning for industry</span> —
+          data pipelines, MLOps, and the translation of research prototypes into production systems.
+        </li>
+      </ul>
+    </div>
+  </section>
 
-        <!-- ═══ ABOUT ═══ -->
-        <section class="section" id="about">
-            <span class="section-label">About Me</span>
-            <h2 class="section-title">From Engineering to AI</h2>
-            <p class="section-subtitle">
-                From Civil Engineering to Data & BI, and from there into Language Technology and AI, my path has always been about understanding complexity and finding new ways to make sense of it. I combine the precision of an engineer with the curiosity and creativity of an artist, turning data and ideas into meaningful solutions.
+  <!-- ═══════════ NEWS ═══════════ -->
+  <section class="content-section content-section-white">
+    <div class="container">
+      <h2 class="section-heading"><i class="fas fa-bullhorn"></i>News &amp; Updates</h2>
+
+      <div class="news-item">
+        <h5 class="news-title">Master's thesis completed</h5>
+        <div class="news-date">June 2026</div>
+        <p class="news-description mb-0">
+          Defended my thesis <em>Meditation Experience with a Social Robot using LLMs and VLMs</em>
+          at the University of Gothenburg. The system combines LLMs, vision-language models and the
+          Furhat social robot for a human-facilitated workshop setting.
+        </p>
+      </div>
+
+      <div class="news-item">
+        <h5 class="news-title">Volvo Trucks collaboration</h5>
+        <div class="news-date">January 2026</div>
+        <p class="news-description mb-0">
+          Completed an industrial NLP and machine translation project with Volvo Trucks, combining
+          terminology-aware rule-based methods with LLM refinement and evaluating the system with
+          BLEU, ROUGE, BERTScore and a custom terminology-recall metric (TREU).
+        </p>
+      </div>
+
+      <div class="news-item">
+        <h5 class="news-title">Presented at MultiGEC-2025</h5>
+        <div class="news-date">2025</div>
+        <p class="news-description mb-0">
+          A small-scale reproduction of semi-manual evaluation for Italian grammatical error correction.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PROJECTS ═══════════ -->
+  <section class="content-section content-section-gray" id="projects">
+    <div class="container">
+      <h2 class="section-heading"><i class="fas fa-code-branch"></i>Selected Projects</h2>
+
+      <div class="selected-publication-item">
+        <div class="selected-publication-title">
+          Meditation Experience with a Social Robot using LLMs and VLMs
+        </div>
+        <div class="selected-publication-authors">
+          Master's thesis · University of Gothenburg · 2026
+        </div>
+        <div class="selected-publication-venue">
+          Designed and implemented a multimodal conversational system combining LLMs, vision-language
+          models and the Furhat social robot for a human-facilitated workshop setting. Developed the
+          dialogue architecture and complete AI pipeline, and conducted user studies analysing
+          multimodal dialogue and human–AI experience design.
+        </div>
+        <div class="mt-1" style="font-size:0.9rem;">
+          <a href="https://github.com/lealimarco/meditation-furhat-workshop-public" target="_blank" rel="noopener">Code</a> ·
+          <a href="files/Leali%20Marco%20-%20Meditation%20Experience%20with%20a%20Social%20Robot%20using%20LLM%20and%20VLMs.pdf" target="_blank" rel="noopener">Paper</a> ·
+          <a href="https://meditation-furhat-pre-interview.onrender.com" target="_blank" rel="noopener">Demo</a>
+        </div>
+      </div>
+
+      <div class="selected-publication-item">
+        <div class="selected-publication-title">
+          Terminology-Aware Machine Translation using Hybrid Rule-Based Methods and LLMs
+        </div>
+        <div class="selected-publication-authors">
+          University of Gothenburg &amp; Volvo Trucks · 2025–2026
+        </div>
+        <div class="selected-publication-venue">
+          Developed a hybrid translation approach combining terminology injection, rule-based NLP
+          methods and LLMs (spaCy, Hugging Face OmniGEC-8B, Ollama/Llama 3.1). Evaluated specialised
+          technical translations with BLEU, ROUGE, BERTScore and a custom terminology-recall metric (TREU).
+        </div>
+        <div class="mt-1" style="font-size:0.9rem;">
+          <a href="https://github.com/lealimarco/Advanced_MT" target="_blank" rel="noopener">Code</a> ·
+          <a href="files/Leali%20Marco%20-%20Terminology-Aware%20MT%20using%20Hybrid%20Rule-Based%20Methods%20and%20LLMs.pdf" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </div>
+
+      <div class="selected-publication-item">
+        <div class="selected-publication-title">
+          Do Multimodal Large Language Models Understand Human Body Language?
+        </div>
+        <div class="selected-publication-authors">Course project · 2025</div>
+        <div class="selected-publication-venue">
+          A context-sensitive evaluation of vision-language models under emotion ambiguity,
+          investigating whether multimodal LLMs can interpret human body language in realistic scenarios.
+        </div>
+        <div class="mt-1" style="font-size:0.9rem;">
+          <a href="files/Leali%20Marco%20-%20Do%20Multimodal%20Large%20Language%20Models%20Understand%20Human%20Body%20Language%3F%20A%20Context-Sensitive%20Evaluation%20under%20Emotion%20Ambiguity.pdf" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </div>
+
+      <div class="selected-publication-item">
+        <div class="selected-publication-title">
+          The Psychologist Dog — A Personality Analysis Chatbot
+        </div>
+        <div class="selected-publication-authors">Course project · 2025</div>
+        <div class="selected-publication-venue">
+          A dialogue system that analyses user personality traits through natural conversation,
+          developed as part of the Dialogue Systems course at the University of Gothenburg.
+        </div>
+        <div class="mt-1" style="font-size:0.9rem;">
+          <a href="https://github.com/lealimarco/the_psychologist_dog" target="_blank" rel="noopener">Code</a> ·
+          <a href="files/Leali%20Marco%20-%20The%20Psychologist%20Dog%20-%20A%20Personality%20Analysis%20Chatbot%20System.pdf" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </div>
+
+      <div class="selected-publication-item">
+        <div class="selected-publication-title">
+          A Small-Scale Reproduction of Semi-Manual Evaluation for Italian GEC
+        </div>
+        <div class="selected-publication-authors">Course project · MultiGEC-2025</div>
+        <div class="selected-publication-venue">
+          Reproduction study evaluating grammatical error correction systems for Italian using
+          semi-manual annotation and comparative metrics.
+        </div>
+        <div class="mt-1" style="font-size:0.9rem;">
+          <a href="files/Leali%20Marco%20-%20A%20Small-Scale%20Reproduction%20of%20Semi-Manual%20Evaluation%20for%20Italian%20Grammatical%20Error%20Correction%20for%20MultiGEC-2025.pdf" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ EXPERIENCE ═══════════ -->
+  <section class="content-section content-section-white" id="experience">
+    <div class="container">
+      <h2 class="section-heading"><i class="fas fa-briefcase"></i>Experience</h2>
+
+      <div class="cv-entry">
+        <div class="d-flex justify-content-between flex-wrap">
+          <div class="cv-role">Machine Learning Engineer</div>
+          <div class="cv-date">Sep 2025 – Jan 2026</div>
+        </div>
+        <div class="cv-org">Volvo Trucks &amp; University of Gothenburg — Gothenburg, Sweden</div>
+        <div class="cv-desc">
+          Designed a hybrid NLP and machine translation pipeline (Python, spaCy, Hugging Face,
+          Ollama/Llama 3.1) with terminology-aware injection. Evaluated with BLEU, ROUGE, BERTScore
+          and a custom TREU metric.
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="d-flex justify-content-between flex-wrap">
+          <div class="cv-role">Business Analyst</div>
+          <div class="cv-date">Nov 2022 – Nov 2024</div>
+        </div>
+        <div class="cv-org">Smurfit Westrock Group — Lucca, Italy</div>
+        <div class="cv-desc">
+          Analysed large B2B datasets to support pricing and sales strategy. Built Power BI dashboards
+          for KPI monitoring across EMEA markets and supported data-driven decisions for tenders and
+          contract negotiations.
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="d-flex justify-content-between flex-wrap">
+          <div class="cv-role">Technical Sales Engineer</div>
+          <div class="cv-date">Nov 2019 – Nov 2022</div>
+        </div>
+        <div class="cv-org">Ghelfi SpA — Milan, Italy</div>
+        <div class="cv-desc">
+          Developed pricing and sales performance reports for FMCG clients, combining data analysis
+          with technical-commercial decision making and long-term B2B relationships.
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="d-flex justify-content-between flex-wrap">
+          <div class="cv-role">IT Consultant — Data Systems &amp; BI</div>
+          <div class="cv-date">Aug 2018 – Nov 2019</div>
+        </div>
+        <div class="cv-org">Mainsim Srl — Genoa, Italy</div>
+        <div class="cv-desc">
+          Designed SQL-based ETL pipelines, performed data integration (SQL Server, MySQL, VB) and
+          built BI dashboards with Power BI and Qlik Sense for KPI monitoring.
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="d-flex justify-content-between flex-wrap">
+          <div class="cv-role">Process Engineer</div>
+          <div class="cv-date">Feb 2018 – Aug 2018</div>
+        </div>
+        <div class="cv-org">Carcano SpA — Milan, Italy</div>
+        <div class="cv-desc">
+          Analysed production datasets to identify bottlenecks and plan process optimisation.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ EDUCATION ═══════════ -->
+  <section class="content-section content-section-gray">
+    <div class="container">
+      <h2 class="section-heading"><i class="fas fa-graduation-cap"></i>Education</h2>
+
+      <div class="cv-entry">
+        <div class="d-flex justify-content-between flex-wrap">
+          <div class="cv-role">MSc in Language Technology</div>
+          <div class="cv-date">Sep 2024 – Jun 2026</div>
+        </div>
+        <div class="cv-org">University of Gothenburg — Sweden</div>
+        <div class="cv-desc">
+          Focus: machine learning, LLMs, VLMs, multimodal human–AI interaction and human–robot
+          interaction. Thesis: <em>Meditation Experience with a Social Robot using LLMs and VLMs</em>.
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="d-flex justify-content-between flex-wrap">
+          <div class="cv-role">MSc in Civil Engineering for Risk Mitigation</div>
+          <div class="cv-date">Sep 2015 – Dec 2017</div>
+        </div>
+        <div class="cv-org">Politecnico di Milano — Italy</div>
+        <div class="cv-desc">
+          Thesis: <em>Design of slope-stabilizing piles for landslide risk mitigation</em>.
+        </div>
+      </div>
+
+      <div class="cv-entry">
+        <div class="d-flex justify-content-between flex-wrap">
+          <div class="cv-role">BSc in Civil and Environmental Engineering</div>
+          <div class="cv-date">Sep 2012 – Sep 2015</div>
+        </div>
+        <div class="cv-org">Politecnico di Milano — Italy</div>
+        <div class="cv-desc">
+          Thesis: <em>V. Bridge: SPT &amp; DPSH and bearing capacity assessment</em>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <section class="content-section content-section-white" id="contact">
+    <div class="container">
+      <h2 class="section-heading"><i class="fas fa-envelope"></i>Contact</h2>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="contact-info">
+            <p class="mb-3" style="color: var(--gray-700);">
+              I am open to research collaborations, PhD opportunities and AI engineering roles
+              across Europe. The best way to reach me is by email.
             </p>
+            <p class="mb-2"><i class="fas fa-envelope"></i>
+              <a class="contact-link" href="mailto:lealimarco@hotmail.it">lealimarco@hotmail.it</a>
+            </p>
+            <p class="mb-2"><i class="fab fa-linkedin"></i>
+              <a class="contact-link" href="https://www.linkedin.com/in/lealimarco/" target="_blank" rel="noopener">linkedin.com/in/lealimarco</a>
+            </p>
+            <p class="mb-0"><i class="fab fa-github"></i>
+              <a class="contact-link" href="https://github.com/lealimarco" target="_blank" rel="noopener">github.com/lealimarco</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="about-quote">
-                <blockquote>
-                    "Fatti non foste a viver come bruti, ma per seguir virtute e canoscenza."
-                    <span class="quote-author"> Dante Alighieri, Inferno XXVI</span>
-                </blockquote>
-            </div>
+</main>
 
-            <div class="interests-grid">
-                <div class="interest-card">
-                    <span class="interest-icon">💬</span>
-                    <h3>Natural Language Processing</h3>
-                    <p>Building robust NLP pipelines — from tokenization and POS-tagging to fine-tuning large language models for translation, error correction and dialogue.</p>
-                </div>
-                <div class="interest-card">
-                    <span class="interest-icon">🧠</span>
-                    <h3>Large Language Models</h3>
-                    <p>Fine-tuning and deploying LLMs (Llama, Hugging Face models) for real-world applications including terminology-aware machine translation and conversational agents.</p>
-                </div>
-                <div class="interest-card">
-                    <span class="interest-icon">🤖</span>
-                    <h3>Multimodal Human-AI Interaction</h3>
-                    <p>Integrating vision-language models with social robotics to create empathetic, context-aware interactions — the focus of my master's thesis at the University of Gothenburg.</p>
-                </div>
-                <div class="interest-card">
-                    <span class="interest-icon">📊</span>
-                    <h3>Data-Driven Decision Making</h3>
-                    <p>6+ years building BI dashboards, ETL pipelines and analytics solutions that turn raw data into actionable business insights across EMEA markets.</p>
-                </div>
-                <div class="interest-card">
-                    <span class="interest-icon">💼</span>
-                    <h3>IT &amp; Data Consulting</h3>
-                    <p>Experience designing SQL-based ETL pipelines, integrating data systems and delivering BI dashboards (Power BI, Qlik Sense) for industrial clients.</p>
-                </div>
-                <div class="interest-card">
-                    <span class="interest-icon">📈</span>
-                    <h3>Business &amp; Sales Analysis</h3>
-                    <p>Translated complex B2B data into pricing strategies, sales performance reports and KPI monitoring for FMCG and packaging sectors, supporting contract negotiations and market expansion.</p>
-                </div>
-            </div>
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-footer">
+  <div class="container text-center">
+    © 2026 Marco Leali. Hosted on
+    <a href="https://github.com/lealimarco/lealimarco.github.io" target="_blank" rel="noopener"
+       style="color: var(--gray-600);">GitHub Pages</a>.
+  </div>
+</footer>
 
-            <div class="about-quote" style="margin-top:44px;">
-                <blockquote>
-                    "Simplicity is the ultimate sophistication."
-                    <span class="quote-author"> Leonardo da Vinci</span>
-                </blockquote>
-            </div>
-            <div class="about-passion">
-                <p>
-                    I love to combine different subjects, apparently opposite — art and science, meditation and robots (like my master's thesis).
-                    I believe that something is impossible until you do it.
-                    My motto is: <strong>"Inspire and get inspired."</strong>
-                </p>
-            </div>
-        </section>
-
-        <!-- ═══ RESEARCH / FOCUS ═══ -->
-        <section class="section" id="research">
-            <span class="section-label">Expertise</span>
-            <h2 class="section-title">Core Competencies</h2>
-            <p class="section-subtitle">Tools, frameworks and domains I work with daily.</p>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>🤖 AI &amp; Machine Learning</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python / PyTorch</span>
-                        <span class="skill-tag">Hugging Face / Transformers</span>
-                        <span class="skill-tag">LLMs &amp; Prompt Engineering</span>
-                        <span class="skill-tag">Generative AI</span>
-                        <span class="skill-tag">RAG</span>
-                        <span class="skill-tag">VLMs</span>
-                        <span class="skill-tag">Tokenization</span>
-                        <span class="skill-tag">API Integration</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>📊 Data Analysis &amp; BI</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SQL (MySQL, SQL Server)</span>
-                        <span class="skill-tag">Power BI / Qlik Sense</span>
-                        <span class="skill-tag">ETL Pipelines</span>
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">Visual Basic</span>
-                        <span class="skill-tag">KPI Monitoring</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>💻 Programming</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript / TypeScript</span>
-                        <span class="skill-tag">C</span>
-                        <span class="skill-tag">MATLAB</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">Git &amp; GitHub</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>🌐 Languages &amp; Tools</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Italian (Native)</span>
-                        <span class="skill-tag">English (Fluent)</span>
-                        <span class="skill-tag">Swedish (Basic)</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">LaTeX</span>
-                        <span class="skill-tag">Linux</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ PROJECTS ═══ -->
-        <section class="section" id="projects">
-            <span class="section-label">Projects</span>
-            <h2 class="section-title">Academic Works</h2>
-            <p class="section-subtitle">Research projects and applied AI systems: from social robotics to industrial machine translation.</p>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <img src="images/thesis.jpg" alt="Meditation experience with social robot Furhat" class="project-image" loading="lazy" width="400" height="200" />
-                    <div class="project-body">
-                        <div class="project-tags"><span class="project-tag">LLMs</span><span class="project-tag">VLMs</span><span class="project-tag">HRI</span><span class="project-tag">Python</span></div>
-                        <h3>Meditation Experience with a Social Robot</h3>
-                        <p>Master's thesis: Built a multimodal interaction system using LLMs and Vision-Language Models on the Furhat robot to generate empathetic, context-aware meditation guidance.</p>
-                        <div class="project-links">
-                            <a href="https://meditation-furhat-pre-interview.onrender.com" class="link-demo" target="_blank" rel="noopener">🌐 Pre-Interview</a>
-                            <a href="files/Leali%20Marco%20-%20Meditation%20Experience%20with%20a%20Social%20Robot%20using%20LLM%20and%20VLMs.pdf" class="link-gh" target="_blank" rel="noopener">📄 Paper</a>
-                            <a href="https://github.com/lealimarco/meditation-furhat-workshop-public" class="link-gh" target="_blank" rel="noopener">🔗 GitHub</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <img src="images/volvo.png" alt="Volvo Trucks machine translation project" class="project-image" loading="lazy" width="400" height="200" />
-                    <div class="project-body">
-                        <div class="project-tags"><span class="project-tag">NLP</span><span class="project-tag">Machine Translation</span><span class="project-tag">spaCy</span><span class="project-tag">Llama 3.1</span></div>
-                        <h3>Terminology-Aware MT for Volvo Trucks</h3>
-                        <p>Designed a hybrid NLP pipeline combining rule-based terminology injection with LLM refinement (OmniGEC-8B, Ollama/Llama 3.1). Evaluated with BLEU, ROUGE, BERTScore and custom TREU metric.</p>
-                        <div class="project-links">
-                            <a href="files/Leali%20Marco%20-%20Terminology-Aware%20MT%20using%20Hybrid%20Rule-Based%20Methods%20and%20LLMs.pdf" class="link-demo" target="_blank" rel="noopener">📄 Paper</a>
-                            <a href="https://github.com/lealimarco/Advanced_MT" class="link-gh" target="_blank" rel="noopener">🔗 GitHub</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <img src="images/ai_robotics.png" alt="Multimodal LLMs and body language" class="project-image" loading="lazy" width="400" height="200" />
-                    <div class="project-body">
-                        <div class="project-tags"><span class="project-tag">VLMs</span><span class="project-tag">Multimodal AI</span><span class="project-tag">Emotion AI</span></div>
-                        <h3>Do Multimodal LLMs Understand Body Language?</h3>
-                        <p>Context-sensitive evaluation of Vision-Language Models under emotion ambiguity. Investigating whether multimodal LLMs can interpret human body language in realistic scenarios.</p>
-                        <div class="project-links">
-                            <a href="files/Leali%20Marco%20-%20Do%20Multimodal%20Large%20Language%20Models%20Understand%20Human%20Body%20Language%3F%20A%20Context-Sensitive%20Evaluation%20under%20Emotion%20Ambiguity.pdf" class="link-demo" target="_blank" rel="noopener">📄 Paper</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <img src="images/psychologist.png" alt="The Psychologist Dog chatbot" class="project-image" loading="lazy" width="400" height="200" />
-                    <div class="project-body">
-                        <div class="project-tags"><span class="project-tag">Dialogue Systems</span><span class="project-tag">Chatbot</span><span class="project-tag">Personality AI</span></div>
-                        <h3>The Psychologist Dog - Personality Analysis Chatbot</h3>
-                        <p>A dialogue system that analyzes user personality traits through natural conversation. Built as part of the Dialogue Systems course at the University of Gothenburg.</p>
-                        <div class="project-links">
-                            <a href="files/Leali%20Marco%20-%20The%20Psychologist%20Dog%20-%20A%20Personality%20Analysis%20Chatbot%20System.pdf" class="link-demo" target="_blank" rel="noopener">📄 Paper</a>
-                            <a href="https://github.com/lealimarco/the_psychologist_dog" class="link-gh" target="_blank" rel="noopener">🔗 GitHub</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <img src="images/gec.png" alt="Grammatical Error Correction evaluation" class="project-image" loading="lazy" width="400" height="200" />
-                    <div class="project-body">
-                        <div class="project-tags"><span class="project-tag">NLP</span><span class="project-tag">GEC</span><span class="project-tag">Evaluation</span><span class="project-tag">MultiGEC-2025</span></div>
-                        <h3>Semi-Manual Evaluation for Italian GEC</h3>
-                        <p>Small-scale reproduction study for MultiGEC-2025: evaluating grammatical error correction systems for Italian using semi-manual annotation and comparative metrics.</p>
-                        <div class="project-links">
-                            <a href="files/Leali%20Marco%20-%20A%20Small-Scale%20Reproduction%20of%20Semi-Manual%20Evaluation%20for%20Italian%20Grammatical%20Error%20Correction%20for%20MultiGEC-2025.pdf" class="link-demo" target="_blank" rel="noopener">📄 Paper</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- ═══ EXPERIENCE ═══ -->
-        <section class="section" id="experience">
-            <span class="section-label">Experience &amp; Education</span>
-            <h2 class="section-title">Career Path</h2>
-            <p class="section-subtitle">6+ years of professional experience across AI, data analysis and engineering — plus two master's degrees.</p>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="timeline-date">Sep 2025 — Jan 2026</span>
-                    <img src="images/volvo.png" alt="Volvo Trucks" class="timeline-logo" loading="lazy" width="36" height="36" />
-                    <h4>Machine Translation Engineer <span class="timeline-badge timeline-badge--work">Work</span></h4>
-                    <p class="timeline-org">Volvo Trucks &amp; University of Gothenburg — Gothenburg, Sweden</p>
-                    <p>Designed a hybrid NLP and MT pipeline (Python, spaCy, Hugging Face, Ollama/Llama 3.1) with terminology-aware injection. Evaluated using BLEU, ROUGE, BERTScore and custom TREU metrics.</p>
-                </div>
-                <div class="timeline-item education-item">
-                    <span class="timeline-date">Sep 2024 — Jun 2026</span>
-                    <h4>MSc in Language Technology <span class="timeline-badge timeline-badge--edu">Education</span></h4>
-                    <p class="timeline-org">University of Gothenburg — Sweden</p>
-                    <p>Focus: Machine Learning, LLMs, VLMs, Python, multimodal Human-AI interactions. Thesis on meditation experience with a social robot using LLMs and VLMs.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">Nov 2022 — Nov 2024</span>
-                    <h4>Business Analyst <span class="timeline-badge timeline-badge--work">Work</span></h4>
-                    <p class="timeline-org">Smurfit Westrock Group — Lucca, Italy</p>
-                    <p>Analyzed large B2B datasets to support pricing and sales strategy. Supported data-driven decision making for tenders and contract negotiations.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">Nov 2019 — Nov 2022</span>
-                    <h4>Technical Sales Engineer <span class="timeline-badge timeline-badge--work">Work</span></h4>
-                    <p class="timeline-org">Ghelfi SpA — Milan, Italy</p>
-                    <p>Developed pricing and sales performance reports for FMCG clients. Combined data analysis with technical-commercial decision making and long-term B2B relationship management.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">Aug 2018 — Nov 2019</span>
-                    <h4>IT Consultant — Data Systems &amp; BI <span class="timeline-badge timeline-badge--work">Work</span></h4>
-                    <p class="timeline-org">Mainsim Srl — Genova, Italy</p>
-                    <p>Designed SQL-based ETL pipelines, performed data integration (SQL Server, MySQL, VB) and built BI dashboards with Power BI and Qlik Sense for KPI monitoring.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">Feb 2018 — Aug 2018</span>
-                    <h4>Process Engineer <span class="timeline-badge timeline-badge--work">Work</span></h4>
-                    <p class="timeline-org">Carcano SpA — Milan, Italy</p>
-                    <p>Analyzed production datasets to identify bottlenecks and plan process optimization strategies.</p>
-                </div>
-                <div class="timeline-item education-item">
-                    <span class="timeline-date">Sep 2015 — Dec 2017</span>
-                    <h4>MSc in Civil Engineering for Risk Mitigation <span class="timeline-badge timeline-badge--edu">Education</span></h4>
-                    <p class="timeline-org">Politecnico di Milano — Italy</p>
-                    <p>Thesis: "Design of slope-stabilizing piles for landslide risk mitigation."</p>
-                </div>
-                <div class="timeline-item education-item">
-                    <span class="timeline-date">Sep 2012 — Sep 2015</span>
-                    <h4>BSc in Civil and Environmental Engineering <span class="timeline-badge timeline-badge--edu">Education</span></h4>
-                    <p class="timeline-org">Politecnico di Milano — Italy</p>
-                    <p>Thesis: "V. Bridge: SPT &amp; DPSH and bearing capacity assessment."</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ CONTACT ═══ -->
-        <section class="section" id="contact">
-            <span class="section-label">Contact</span>
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle">Open to research collaborations, PhD opportunities and AI engineering roles across Europe.</p>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <p>I'm based in <strong>Sweden</strong> and always eager to discuss NLP, conversational AI, human-robot interaction or new opportunities. Reach out via email or any of my profiles.</p>
-                    <div class="contact-links">
-                        <a href="mailto:lealimarco@hotmail.it" class="contact-link">📧 lealimarco@hotmail.it</a>
-                        <a href="https://github.com/lealimarco" class="contact-link" target="_blank" rel="noopener">🔗 github.com/lealimarco</a>
-                        <a href="https://www.linkedin.com/in/lealimarco/" class="contact-link" target="_blank" rel="noopener">💼 linkedin.com/in/lealimarco</a>
-                        <a href="https://meditation-furhat-pre-interview.onrender.com" class="contact-link" target="_blank" rel="noopener">🌐 Thesis Pre-Interview Demo</a>
-                        <!-- <a href="files/Leali_Marco_CV.pdf" class="contact-link" target="_blank" rel="noopener">📄 Download Full CV</a> -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ─── Footer ─── -->
-    <footer class="footer">
-        <p>&copy; 2026 Marco Leali — Sweden. Inspire and get inspired. Hosted on <a href="https://github.com/lealimarco/lealimarco.github.io" target="_blank" rel="noopener">GitHub Pages</a>.</p>
-        <p style="margin-top:4px;font-size:0.76rem;">Last updated: July 2026 · <a href="https://www.linkedin.com/in/lealimarco/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/lealimarco" target="_blank" rel="noopener">GitHub</a> · <a href="files/Leali_Marco_CV.pdf" target="_blank" rel="noopener">CV</a></p>
-    </footer>
-
-    <!-- ─── Script ─── -->
-    <script>
-        (function() {
-            const navbar = document.getElementById('navbar');
-            const navToggle = document.getElementById('navToggle');
-            const navLinks = document.getElementById('navLinks');
-            const allNavLinks = navLinks.querySelectorAll('a');
-
-            function updateNavScroll() {
-                navbar.classList.toggle('scrolled', window.scrollY > 50);
-            }
-            window.addEventListener('scroll', updateNavScroll, { passive: true });
-            updateNavScroll();
-
-            navToggle.addEventListener('click', () => {
-                const isOpen = navLinks.classList.toggle('open');
-                navToggle.classList.toggle('active');
-                navToggle.setAttribute('aria-expanded', isOpen);
-                document.body.style.overflow = isOpen ? 'hidden' : '';
-            });
-            allNavLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('open');
-                    navToggle.classList.remove('active');
-                    navToggle.setAttribute('aria-expanded', 'false');
-                    document.body.style.overflow = '';
-                });
-            });
-
-            const sections = document.querySelectorAll('section[id]');
-            const navAnchors = document.querySelectorAll('.nav-links a:not(.nav-cta)');
-
-            function updateActiveLink() {
-                let currentId = '';
-                sections.forEach(section => {
-                    const top = section.offsetTop - 100;
-                    if (window.scrollY >= top) currentId = section.getAttribute('id');
-                });
-                navAnchors.forEach(a => {
-                    a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
-                });
-            }
-            window.addEventListener('scroll', updateActiveLink, { passive: true });
-            updateActiveLink();
-
-            // Reveal on scroll
-            const revealEls = document.querySelectorAll(
-                '.interest-card, .project-card, .timeline-item, .skill-category');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-            revealEls.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(28px)';
-                el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
-                observer.observe(el);
-            });
-
-            console.log('🚀 Marco Leali — Portfolio ready. Sweden.');
-        })();
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
