@@ -106,15 +106,22 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
 .masthead-nav a:hover{border-bottom-color:var(--ink);}
 
 /* ==========================================================================
-   3. OPENING
+   3. OPENING  (portrait left · title right)
    ========================================================================== */
-.opening{padding-block:clamp(46px,7vw,108px) 0;}
+.opening{padding-block:clamp(40px,6vw,96px) 0;}
+
+.opening-grid{
+  display:grid;
+  grid-template-columns:clamp(190px,23vw,360px) 1fr;
+  gap:clamp(24px,4vw,80px);
+  align-items:center;
+}
 
 .opening-title{
   font-family:var(--display);
   font-weight:400;
-  font-size:clamp(54px,15.5vw,256px);
-  line-height:.86;
+  font-size:clamp(38px,9.4vw,168px);
+  line-height:.88;
   letter-spacing:-.045em;
   margin:0;
 }
@@ -123,11 +130,10 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
   font-family:var(--serif);
   font-style:italic;
   font-weight:400;
-  font-size:clamp(21px,5.2vw,86px);
-  line-height:1.05;
+  font-size:clamp(18px,2.7vw,48px);
+  line-height:1.06;
   letter-spacing:-.015em;
-  padding-left:clamp(0px,8vw,165px);
-  margin-top:.06em;
+  margin-top:.14em;
 }
 
 .opening-deck{
@@ -174,19 +180,8 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
 .opening-meta a:hover{border-bottom-color:var(--ink);}
 
 /* ==========================================================================
-   4. LOOSE PRINTS
+   4. LOOSE PRINT (tilted photo)
    ========================================================================== */
-.prints{padding-block:clamp(56px,8vw,136px);}
-.print-row{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:clamp(20px,4vw,70px);
-  align-items:center;
-}
-.print-row.single{
-  grid-template-columns:minmax(0,540px);
-  justify-content:center;
-}
 .loose-print{
   margin:0;
   background:#fff;
@@ -336,11 +331,18 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
 }
 .entry-links a:hover{border-bottom-color:var(--ink);}
 
-/* ---- entries with a thumbnail (projects) ---- */
+/* ---- entries with a thumbnail: date + image stacked on the left ---- */
 .entry.has-thumb{
-  grid-template-columns:clamp(110px,11vw,170px) clamp(120px,13vw,210px) 1fr;
+  grid-template-columns:clamp(170px,21vw,320px) 1fr;
+  gap:clamp(20px,3.4vw,62px);
   align-items:start;
 }
+.entry-aside{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.entry-aside .entry-meta{padding-top:0;}
 .entry-thumb{
   width:100%;
   aspect-ratio:3/2;
@@ -349,7 +351,6 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
   border:1px solid rgba(0,0,0,.08);
   background:#f2f2f2;
   display:block;
-  margin-top:8px;
   transition:transform .25s ease, box-shadow .25s ease;
 }
 .entry.has-thumb:hover .entry-thumb{
@@ -425,19 +426,21 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
   .masthead-role{display:none;}
   .editorial-grid{grid-template-columns:1fr;gap:26px;}
   .entry,
-  .entry.has-thumb{grid-template-columns:1fr;gap:10px;}
+  .entry.has-thumb{grid-template-columns:1fr;gap:16px;}
   .entry-meta{padding-top:0;}
-  .entry-thumb{max-width:220px;margin-top:0;}
+  .entry-aside{max-width:320px;}
   .opening-meta{grid-template-columns:1fr 1fr;gap:20px;}
-  .print-row{grid-template-columns:1fr;gap:44px;}
   .closing h2 em{padding-left:0;}
+}
+@media (max-width:760px){
+  .opening-grid{grid-template-columns:1fr;gap:30px;}
+  .opening-grid .loose-print{max-width:260px;}
 }
 @media (max-width:620px){
   body{font-size:16px;}
   .masthead-nav{font-size:12.5px;gap:13px;}
   .brand{font-size:15px;}
   .opening-meta{grid-template-columns:1fr;}
-  .entry-thumb{max-width:100%;}
   .closing-links{gap:18px;}
 }
 </style>
@@ -462,23 +465,29 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
 
   <!-- ═══════════ OPENING ═══════════ -->
   <section class="wrap opening">
-    <h1 class="opening-title">
-      AI Engineer
-      <span class="opening-title-sub">for language, models &amp; people.</span>
-    </h1>
+    <div class="opening-grid">
+      <figure class="loose-print" style="--tilt:-3.5deg">
+        <img src="images/pic.png" alt="Marco Leali" />
+        <figcaption>Stockholm, 2026</figcaption>
+      </figure>
+
+      <h1 class="opening-title">
+        AI Engineer
+        <span class="opening-title-sub">for language, models &amp; people.</span>
+      </h1>
+    </div>
 
     <div class="opening-deck">
       <p>
-        Master's in Language Technology from the University of Gothenburg. Six years across
-        data analysis, software engineering and applied AI. I build NLP, LLM and multimodal
-        systems that have to work with real users — not just on benchmarks.
+        I am an AI engineer with a Master's in Language Technology from the University of Gothenburg and six years of experience
+        across business analysis, software consulting and sales.
       </p>
     </div>
 
     <dl class="opening-meta">
       <div>
         <dt>Based in</dt>
-        <dd>Stockholm, Sweden</dd>
+        <dd>Sweden</dd>
       </div>
       <div>
         <dt>Focus</dt>
@@ -495,16 +504,6 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
     </dl>
   </section>
 
-  <!-- ═══════════ PORTRAIT ═══════════ -->
-  <section class="wrap prints" aria-label="Portrait">
-    <div class="print-row single">
-      <figure class="loose-print" style="--tilt:-3.5deg">
-        <img src="images/pic.png" alt="Marco Leali" />
-        <figcaption>Stockholm, 2026</figcaption>
-      </figure>
-    </div>
-  </section>
-
   <!-- ═══════════ 01 · ABOUT ═══════════ -->
   <section class="section" id="about">
     <div class="wrap">
@@ -512,18 +511,12 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
 
       <div class="editorial-grid">
         <p class="lead">
-          I am an AI engineer with a Master's in Language Technology from the University of
-          Gothenburg and six years of experience across data analysis, software engineering and
-          applied AI. My work focuses on natural language processing, large language models and
-          multimodal human–AI interaction.
+          Most recently I designed a hybrid NLP and machine translation pipeline with Volvo Trucks,
+          combining terminology-aware rule-based methods with LLM refinement. For my Master's thesis
+          I built a real-time multimodal conversational system integrating LLMs, vision-language
+          models and the Furhat social robot, and ran user studies on human–AI experience design.
         </p>
         <div class="prose">
-          <p>
-            Most recently I designed a hybrid NLP and machine translation pipeline with Volvo Trucks,
-            combining terminology-aware rule-based methods with LLM refinement. For my Master's thesis
-            I built a real-time multimodal conversational system integrating LLMs, vision-language
-            models and the Furhat social robot, and ran user studies on human–AI experience design.
-          </p>
           <p>
             My path into AI came through civil engineering, data analysis and technical sales. That
             background shapes how I work: I care about rigour, but also about systems that hold up
@@ -538,19 +531,19 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
 
       <div class="editorial-grid">
         <p class="lead">
-          Art and mathematics. Meditation and robotics. Engineering and storytelling. These are not
-          opposites to me — they are different lenses on the same problem.
+          Art and mathematics. Humans and robots. If AI is the ultimate optimisation,
+          so the language is the ultimate art.
         </p>
         <div class="prose">
           <p>
             My thesis is the clearest example: a social robot, powered by large language models and
-            vision-language models, guiding a human through a meditation experience. One is quiet and
-            inward; the other is engineered and outward.
+            vision-language models, guiding participants through a meditation experience settled in Stockholm.
           </p>
           <p>
-            Building it forced me to ask what human–AI interaction really means when the AI is not
-            answering questions but shaping an experience. The technical work was only half of it —
-            the other half was understanding how people actually respond.
+            Most recently I designed a hybrid NLP and machine translation pipeline with Volvo Trucks,
+            combining terminology-aware rule-based methods with LLM refinement. For my Master's thesis
+            I built a real-time multimodal conversational system integrating LLMs, vision-language
+            models and the Furhat social robot, and ran user studies on human–AI experience design.
           </p>
         </div>
       </div>
@@ -559,45 +552,17 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
     </div>
   </section>
 
-  <!-- ═══════════ 02 · NEWS ═══════════ -->
-  <section class="section" id="news">
-    <div class="wrap">
-      <p class="section-label">02 — News &amp; updates</p>
-
-      <article class="entry">
-        <div class="entry-meta">June 2026</div>
-        <div>
-          <h3>Master's thesis completed</h3>
-          <p class="entry-desc">
-            Defended <em>Meditation Experience with a Social Robot using LLMs and VLMs</em> at the
-            University of Gothenburg. The system combines LLMs, vision-language models and the Furhat
-            social robot in a human-facilitated workshop setting.
-          </p>
-        </div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-meta">January 2026</div>
-        <div>
-          <h3>Volvo Trucks collaboration</h3>
-          <p class="entry-desc">
-            Completed an industrial NLP and machine translation project with Volvo Trucks, combining
-            terminology-aware rule-based methods with LLM refinement and evaluating the system with
-            BLEU, ROUGE, BERTScore and a custom terminology-recall metric (TREU).
-          </p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ═══════════ 03 · PROJECTS ═══════════ -->
+ 
+  <!-- ═══════════ 02 · PROJECTS ═══════════ -->
   <section class="section" id="projects">
     <div class="wrap">
-      <p class="section-label">03 — Selected projects</p>
+      <p class="section-label">02 — Recent projects</p>
 
       <article class="entry has-thumb">
-        <div class="entry-meta">2026 · Thesis</div>
-        <img class="entry-thumb" src="images/project-meditation.png" alt="Meditation with a social robot project" />
+        <div class="entry-aside">
+          <div class="entry-meta">2026 · Thesis</div>
+          <img class="entry-thumb" src="images/project-meditation.png" alt="Meditation with a social robot project" />
+        </div>
         <div>
           <h3>Meditation Experience with a Social Robot using LLMs and VLMs</h3>
           <p class="entry-sub">Master's thesis · University of Gothenburg</p>
@@ -616,8 +581,10 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
       </article>
 
       <article class="entry has-thumb">
-        <div class="entry-meta">2025–2026</div>
-        <img class="entry-thumb" src="images/project-mt.png" alt="Terminology-aware machine translation project" />
+        <div class="entry-aside">
+          <div class="entry-meta">2025–2026</div>
+          <img class="entry-thumb" src="images/project-mt.png" alt="Terminology-aware machine translation project" />
+        </div>
         <div>
           <h3>Terminology-Aware Machine Translation using Hybrid Rule-Based Methods and LLMs</h3>
           <p class="entry-sub">University of Gothenburg &amp; Volvo Trucks</p>
@@ -634,8 +601,10 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
       </article>
 
       <article class="entry has-thumb">
-        <div class="entry-meta">2025 · Course</div>
-        <img class="entry-thumb" src="images/project-body-language.png" alt="Multimodal LLMs and human body language project" />
+        <div class="entry-aside">
+          <div class="entry-meta">2025 · Course</div>
+          <img class="entry-thumb" src="images/project-body-language.png" alt="Multimodal LLMs and human body language project" />
+        </div>
         <div>
           <h3>Do Multimodal Large Language Models Understand Human Body Language?</h3>
           <p class="entry-sub">Course project</p>
@@ -650,8 +619,10 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
       </article>
 
       <article class="entry has-thumb">
-        <div class="entry-meta">2025 · Course</div>
-        <img class="entry-thumb" src="images/project-psychologist-dog.png" alt="The Psychologist Dog chatbot project" />
+        <div class="entry-aside">
+          <div class="entry-meta">2025 · Course</div>
+          <img class="entry-thumb" src="images/project-psychologist-dog.png" alt="The Psychologist Dog chatbot project" />
+        </div>
         <div>
           <h3>The Psychologist Dog — A Personality Analysis Chatbot</h3>
           <p class="entry-sub">Dialogue Systems course · University of Gothenburg</p>
@@ -666,8 +637,10 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
       </article>
 
       <article class="entry has-thumb">
-        <div class="entry-meta">2025 · MultiGEC</div>
-        <img class="entry-thumb" src="images/project-italian-gec.png" alt="Italian grammatical error correction evaluation project" />
+        <div class="entry-aside">
+          <div class="entry-meta">2025 · MultiGEC</div>
+          <img class="entry-thumb" src="images/project-italian-gec.png" alt="Italian grammatical error correction evaluation project" />
+        </div>
         <div>
           <h3>A Small-Scale Reproduction of Semi-Manual Evaluation for Italian GEC</h3>
           <p class="entry-sub">Course project · MultiGEC-2025</p>
@@ -683,10 +656,10 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
     </div>
   </section>
 
-  <!-- ═══════════ 04 · EXPERIENCE ═══════════ -->
+  <!-- ═══════════ 03 · EXPERIENCE ═══════════ -->
   <section class="section" id="experience">
     <div class="wrap">
-      <p class="section-label">04 — Experience</p>
+      <p class="section-label">03 — Experience</p>
 
       <article class="entry">
         <div class="entry-meta">Sep 2025 — Jan 2026</div>
@@ -751,10 +724,10 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
     </div>
   </section>
 
-  <!-- ═══════════ 05 · EDUCATION ═══════════ -->
+  <!-- ═══════════ 04 · EDUCATION ═══════════ -->
   <section class="section" id="education">
     <div class="wrap">
-      <p class="section-label">05 — Education</p>
+      <p class="section-label">04 — Education</p>
 
       <article class="entry">
         <div class="entry-meta">Sep 2024 — Jun 2026</div>
@@ -792,14 +765,13 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
     </div>
   </section>
 
-  <!-- ═══════════ 06 · CONTACT ═══════════ -->
+  <!-- ═══════════ 05 · CONTACT ═══════════ -->
   <section class="closing" id="contact">
     <div class="wrap">
       <h2>Let's <em>talk.</em></h2>
 
       <p class="closing-note">
-        I am open to research collaborations, PhD opportunities and AI engineering roles across Europe.
-        The best way to reach me is by email.
+        I am open to AI research collaborations. The best way to reach me is by email.
       </p>
 
       <div class="closing-links">
