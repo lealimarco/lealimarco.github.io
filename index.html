@@ -180,7 +180,7 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
 .opening-meta a:hover{border-bottom-color:var(--ink);}
 
 /* ==========================================================================
-   4. LOOSE PRINT (tilted photo)
+   4. LOOSE PRINT (framed photo)
    ========================================================================== */
 .loose-print{
   margin:0;
@@ -188,7 +188,7 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
   padding:12px 12px 0;
   border:1px solid rgba(0,0,0,.07);
   box-shadow:1px 6px 18px rgba(0,0,0,.16);
-  transform:rotate(var(--tilt,-4deg));
+  transform:rotate(var(--tilt,0deg));
 }
 .loose-print img{
   width:100%;
@@ -466,7 +466,7 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
   <!-- ═══════════ OPENING ═══════════ -->
   <section class="wrap opening">
     <div class="opening-grid">
-      <figure class="loose-print" style="--tilt:-3.5deg">
+      <figure class="loose-print">
         <img src="images/pic.png" alt="Marco Leali" />
         <figcaption>Stockholm, 2026</figcaption>
       </figure>
@@ -509,22 +509,6 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
     <div class="wrap">
       <p class="section-label">01 — About</p>
 
-      <div class="editorial-grid">
-        <p class="lead">
-          Most recently I designed a hybrid NLP and machine translation pipeline with Volvo Trucks,
-          combining terminology-aware rule-based methods with LLM refinement. For my Master's thesis
-          I built a real-time multimodal conversational system integrating LLMs, vision-language
-          models and the Furhat social robot, and ran user studies on human–AI experience design.
-        </p>
-        <div class="prose">
-          <p>
-            My path into AI came through civil engineering, data analysis and technical sales. That
-            background shapes how I work: I care about rigour, but also about systems that hold up
-            with real users and real constraints.
-          </p>
-        </div>
-      </div>
-
       <h2 class="display-xl" style="margin-top:clamp(56px,8vw,130px);">
         Combining subjects <em>that seem opposite.</em>
       </h2>
@@ -561,7 +545,7 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
       <article class="entry has-thumb">
         <div class="entry-aside">
           <div class="entry-meta">2026 · Thesis</div>
-          <img class="entry-thumb" src="images/project-meditation.png" alt="Meditation with a social robot project" />
+          <img class="entry-thumb" src="images/thesis.jpg" alt="Meditation with a social robot project" />
         </div>
         <div>
           <h3>Meditation Experience with a Social Robot using LLMs and VLMs</h3>
@@ -583,7 +567,7 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
       <article class="entry has-thumb">
         <div class="entry-aside">
           <div class="entry-meta">2025–2026</div>
-          <img class="entry-thumb" src="images/project-mt.png" alt="Terminology-aware machine translation project" />
+          <img class="entry-thumb" src="images/volvo.png" alt="Terminology-aware machine translation project" />
         </div>
         <div>
           <h3>Terminology-Aware Machine Translation using Hybrid Rule-Based Methods and LLMs</h3>
@@ -603,7 +587,7 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
       <article class="entry has-thumb">
         <div class="entry-aside">
           <div class="entry-meta">2025 · Course</div>
-          <img class="entry-thumb" src="images/project-body-language.png" alt="Multimodal LLMs and human body language project" />
+          <img class="entry-thumb" src="images/ai_robotics.png" alt="Multimodal LLMs and human body language project" />
         </div>
         <div>
           <h3>Do Multimodal Large Language Models Understand Human Body Language?</h3>
@@ -621,7 +605,7 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
       <article class="entry has-thumb">
         <div class="entry-aside">
           <div class="entry-meta">2025 · Course</div>
-          <img class="entry-thumb" src="images/project-psychologist-dog.png" alt="The Psychologist Dog chatbot project" />
+          <img class="entry-thumb" src="images/psychologist.png" alt="The Psychologist Dog chatbot project" />
         </div>
         <div>
           <h3>The Psychologist Dog — A Personality Analysis Chatbot</h3>
@@ -639,7 +623,7 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
       <article class="entry has-thumb">
         <div class="entry-aside">
           <div class="entry-meta">2025 · MultiGEC</div>
-          <img class="entry-thumb" src="images/project-italian-gec.png" alt="Italian grammatical error correction evaluation project" />
+          <img class="entry-thumb" src="images/gec.png" alt="Italian grammatical error correction evaluation project" />
         </div>
         <div>
           <h3>A Small-Scale Reproduction of Semi-Manual Evaluation for Italian GEC</h3>
@@ -768,11 +752,8 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
   <!-- ═══════════ 05 · CONTACT ═══════════ -->
   <section class="closing" id="contact">
     <div class="wrap">
-      <h2>Let's <em>talk.</em></h2>
+      <h2>Inspire and <em>get inspired.</em></h2>
 
-      <p class="closing-note">
-        I am open to AI research collaborations. The best way to reach me is by email.
-      </p>
 
       <div class="closing-links">
         <a href="mailto:lealimarco@hotmail.it">lealimarco@hotmail.it</a>
