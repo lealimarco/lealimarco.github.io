@@ -111,9 +111,10 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
 .opening{padding-block:clamp(40px,6vw,96px) 0;}
 
 .opening-grid{
+  --photo:clamp(110px, 13vw, 180px);   /* scales with viewport */
   display:grid;
-  grid-template-columns:180px 1fr;   /* column = photo width exactly */
-  gap:24px;                          /* the only thing controlling distance */
+  grid-template-columns:var(--photo) 1fr;
+  gap:clamp(16px,1.8vw,32px);
   align-items:center;
 }
 
@@ -184,14 +185,15 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
    4. LOOSE PRINT (framed photo)
    ========================================================================== */
    .loose-print{
+  width:100%;              /* fills the grid column */
+  max-width:var(--photo);  /* never exceeds it */
   margin:0;
   padding:0;
   border:0;
   background:none;
   box-shadow:1px 6px 18px rgba(0,0,0,.18);
   transform:rotate(var(--tilt,0deg));
-  width:min(100%, 180px);   /* smaller footprint */
-  overflow:hidden;          /* keeps the shadow tight to the crop */
+  overflow:hidden;
 }
 
 .loose-print img{
